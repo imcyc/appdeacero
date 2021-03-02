@@ -1,0 +1,76 @@
+.mapei {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 120px;
+}
+
+.mapei .btn {
+  background-color: #FF5001;
+  color: #fff;
+  padding: 5px 15px;
+  font-weight: bold;
+  transition: all 1s;
+  font-size: 1.5rem;
+}
+
+.mapei .btn:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.react-icons {
+  vertical-align: middle;
+}
+
+.forma {
+  text-align: left;
+  justify-content: left;
+}
+
+.forma input, .forma select {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 7px;
+  text-align: center;
+  border: 0;
+  box-shadow: 0 0 10px #cdcdcd;
+  margin: 5px 0;
+}
+
+.forma input:focus {
+  border: 2px solid #FF5001;
+  background: #FF5001;
+  color: #fff;
+}
+
+.forma h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+.forma h3 {
+  margin: 0;
+  padding: 5px 0;
+  margin-top: 10px;
+}
+
+.calcular {
+  width: 100%;
+  background: #FF5001;
+  color: #fff;
+  font-weight: 100;
+  border: 0;
+  font-size: 2rem;
+  padding: 5px;
+  font-family: 'Oswald', sans-serif;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.calcular:hover {
+  background: #333;
+}

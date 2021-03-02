@@ -7,7 +7,6 @@ export default function Home() {
 
       <main className={styles.main}>
         <img src="/logo_imcyc.svg" alt="Calculadoras para la construcción - Instituto Mexicano del Cemento y del Concreto A.C" style={{width: '300px'}} />
-        <hr/>
         <h1>CALCULADORAS PARA LA CONSTRUCCIÓN</h1>  
       </main>
 
