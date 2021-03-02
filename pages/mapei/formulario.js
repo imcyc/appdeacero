@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import styles from '../../styles/Mapei.module.css'
@@ -6,7 +7,17 @@ import { TiArrowRight } from 'react-icons/ti';
 
 export default function Formulario() {
 
+  const router = useRouter()
+
   const [carga, setCarga] = useState(170);
+  const [datos, setDatos] = useState({
+    area: 0,
+    destino: "",
+    claro: 0,
+    pconcreto: 0,
+    pmalla: 0,
+    pvar: 0
+  });
 
   const calcular = (e) => {
     e.preventDefault();
@@ -17,6 +28,8 @@ export default function Formulario() {
     const pmalla = e.target.pmalla.value;
     const pvar = e.target.pvar.value;
     console.log(destino);
+
+    router.push("/mapei/resultados")
   }
 
   const calcularCarga = (e) => {
@@ -42,7 +55,7 @@ export default function Formulario() {
           <hr/>
           <h3><TiArrowRight /> ÁREA:</h3>
           <input type="number" step="0.01" name="area" placeholder="Ingresar el Área en metros" />
-          <h3><TiArrowRight /> DESTINO (CARGA VIVA {carga} kg/m<sup>2</sup>):</h3>
+          <h3><TiArrowRight /> DESTINO (CARGA VIVA <span className={styles.carga}>{carga}</span> kg/m<sup>2</sup>):</h3>
           <select name="destino" onChange={calcularCarga}>
             <option value="entrepiso">ENTREPISO</option>
             <option value="azotea">AZOTEA</option>
