@@ -14,8 +14,8 @@ export default function Layout({children}) {
       {children}
 
       <footer>
-        <p>Instituto Mexicano del Cemento y del Concreto A.C.</p>
-        <p><small>Av. Insurgentes Sur # 1846 Col. Florida, C.P. 01030, México, CDMX.</small></p>
+        <p><b>Instituto Mexicano del Cemento y del Concreto A.C.</b></p>
+        <p><small>Av. Insurgentes Sur # 1846 Col. Florida, C.P. 01030, México, CDMX., (55) 5322 5740, imcyc@imcyc.com</small></p>
       </footer>
     </div>
   )

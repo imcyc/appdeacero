@@ -69,6 +69,7 @@
   font-family: 'Oswald', sans-serif;
   cursor: pointer;
   transition: all 1s;
+  box-shadow: 0 0 10px #939393;
 }
 
 .calcular:hover {
