@@ -67,6 +67,7 @@ export default function Formulario() {
             <option value="4">4</option>
             <option value="4.5">4.5</option>
             <option value="5">5</option>
+            <option value="5">5.5</option>
           </select>
         </div>
         <hr/>
