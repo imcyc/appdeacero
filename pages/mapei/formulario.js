@@ -29,7 +29,17 @@ export default function Formulario() {
     const pvar = e.target.pvar.value;
     console.log(destino);
 
-    router.push("/mapei/resultados")
+    router.push({
+      pathname: "/mapei/resultados",
+      query: {
+        area: area,
+        destino: destino,
+        claro: claro,
+        pconcreto: pconcreto,
+        pmalla: pmalla,
+        pvar: pvar
+      }
+    })
   }
 
   const calcularCarga = (e) => {
