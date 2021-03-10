@@ -30,7 +30,7 @@ export default function Formulario() {
     console.log(destino);
 
     router.push({
-      pathname: "/mapei/resultados",
+      pathname: "/deacero/resultados",
       query: {
         area: area,
         destino: destino,
