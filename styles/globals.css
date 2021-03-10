@@ -78,11 +78,12 @@ footer p {
   justify-content: center;
   align-items: center;
   background: #222;
+  padding: 10px 90px;
 }
 
 .datos div {
   padding: 5px;
-  flex-grow: 1;
+  flex: 1 1 0px;
 }
 
 .datos h2 {
@@ -136,6 +137,11 @@ footer p {
 .layt div .datos p.esp {
   background: #111;
   color: #fff;
+}
+
+p.carga {
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 600px) {

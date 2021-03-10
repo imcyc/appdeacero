@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
+import Datos from '../../components/datos'
+
+let data = require('../../components/data.json');
 
 function Resultados() {
   const router = useRouter()
@@ -10,6 +13,8 @@ function Resultados() {
   const pconcreto = router.query.pconcreto;
   const pmalla = router.query.pmalla;
   const pvar = router.query.pvar;
+
+  console.log(data);
 
   return (
     <Layout>
@@ -34,47 +39,32 @@ function Resultados() {
           </div>
         </div>
         <div className="layt">
-          <div>
-            <h2><span class="lnr lnr-arrow-right"></span> VIG-BOV Alma Abierta</h2>
-            <hr/>
-            <div className="datos">
-              <p className="esp">ESPESOR LOSA</p>
-              <p>18 cm</p>
-            </div>
-            <div className="datos">
-              <p className="esp">COSTO</p>
-              <p>$ 534.30 mt<sup>2</sup></p>
-            </div>
-            <div className="datos">
-              <p className="esp">COSTO TOTAL</p>
-              <p>$ 26,714.79</p>
-            </div>
-            <div className="datos">
-              <p className="esp">CIMBRADO</p>
-              <p>1.6 JOR</p>
-            </div>
-            <div className="datos">
-              <p className="esp">EJECUCIÓN TOTAL</p>
-              <p>4.9 JOR</p>
-            </div>
-            <div className="datos">
-              <p className="esp">JOR = Jornada de trabajo<br/>1 Carpintero y 1 Ayudante</p>
-            </div>
-          </div>
-          <div>
-            <h2><span class="lnr lnr-arrow-right"></span> VIG-BOV Pretensada</h2>
-            <hr/>
-          </div>
+          <Datos 
+            titulo="VIG-BOV Alma Abierta"
+            espesor="18"
+            costo="534.30"
+            costoTotal="26714.79"
+          />
+          <Datos 
+            titulo="VIG-BOV Pretensada"
+            espesor="18"
+            costo="569.15"
+            costoTotal="28457.52"
+          />
         </div>
         <div className="layt dos">
-          <div>
-            <h2><span class="lnr lnr-arrow-right"></span> LOSA SÓLIDA Y VAR. G42</h2>
-            <hr/>
-          </div>
-          <div>
-            <h2><span class="lnr lnr-arrow-right"></span> LOSA ALIGERADA Y VAR. G42</h2>
-            <hr/>
-          </div>
+          <Datos 
+            titulo="LOSA SÓLIDA Y VAR. G42"
+            espesor="15"
+            costo="701.45"
+            costoTotal="35072.67"
+          />
+          <Datos 
+            titulo="LOSA ALIGERADA Y VAR. G42"
+            espesor="15"
+            costo="621.83"
+            costoTotal="31091.56"
+          />
         </div>
       </div>
     </Layout>
