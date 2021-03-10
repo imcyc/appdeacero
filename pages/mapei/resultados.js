@@ -40,12 +40,14 @@ function Resultados() {
         </div>
         <div className="layt">
           <Datos 
+            bkg="uno"
             titulo="VIG-BOV Alma Abierta"
             espesor="18"
             costo="534.30"
             costoTotal="26714.79"
           />
           <Datos 
+            bkg="dos"
             titulo="VIG-BOV Pretensada"
             espesor="18"
             costo="569.15"
@@ -54,12 +56,14 @@ function Resultados() {
         </div>
         <div className="layt dos">
           <Datos 
+            bkg="tres"
             titulo="LOSA SÓLIDA Y VAR. G42"
             espesor="15"
             costo="701.45"
             costoTotal="35072.67"
           />
           <Datos 
+            bkg="cuatro"
             titulo="LOSA ALIGERADA Y VAR. G42"
             espesor="15"
             costo="621.83"
