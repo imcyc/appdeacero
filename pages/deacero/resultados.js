@@ -9,12 +9,29 @@ function Resultados() {
   const router = useRouter()
   const area = router.query.area;
   const destino = router.query.destino;
-  const claro = router.query.claro;
+  const claro = Number(router.query.claro);
   const pconcreto = router.query.pconcreto;
   const pmalla = router.query.pmalla;
   const pvar = router.query.pvar;
 
-  console.log(data);
+  function thousands_separators(num)
+  {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  }
+
+  console.log(claro);
+
+  const VigBovAA = data.filter(dato => dato.tipo === "VigBovAA" && dato.longitud == claro && dato.destino === destino);
+
+  const VigBovPretensada = data.filter(dato => dato.tipo === "VigBovPretensada" && dato.longitud == claro && dato.destino === destino);
+
+  const LosaSolida = data.filter(dato => dato.tipo === "LosaSolida" && dato.longitud == claro && dato.destino === destino);
+
+  const LosaAligerada = data.filter(dato => dato.tipo === "LosaAligerada" && dato.longitud == claro && dato.destino === destino);
+
+  console.log("VigAA" + JSON.stringify(VigBovAA));
 
   return (
     <Layout>
@@ -42,32 +59,40 @@ function Resultados() {
           <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
-            espesor="18"
-            costo="534.30"
-            costoTotal="26714.79"
+            espesor={VigBovAA[0].espesor}
+            costo={VigBovAA[0].precio * 1.2}
+            costoTotal={thousands_separators(((VigBovAA[0].precio * 1.2) * area).toFixed(2))}
+            cimbrado="1.6"
+            ejecucion="4.9"
           />
           <Datos 
             bkg="dos"
             titulo="VIG-BOV Pretensada"
-            espesor="18"
-            costo="569.15"
-            costoTotal="28457.52"
+            espesor={VigBovPretensada[0].espesor}
+            costo={VigBovPretensada[0].precio * 1.2}
+            costoTotal={thousands_separators(((VigBovPretensada[0].precio * 1.2) * area).toFixed(2))}
+            cimbrado="1.6"
+            ejecucion="5.2"
           />
         </div>
         <div className="layt dos">
           <Datos 
             bkg="tres"
             titulo="LOSA SÓLIDA Y VAR. G42"
-            espesor="15"
-            costo="701.45"
-            costoTotal="35072.67"
+            espesor={LosaSolida[0].espesor}
+            costo={LosaSolida[0].precio * 1.2}
+            costoTotal={thousands_separators(((LosaSolida[0].precio * 1.2) * area).toFixed(2))}
+            cimbrado="5.2"
+            ejecucion="8.1"
           />
           <Datos 
             bkg="cuatro"
             titulo="LOSA ALIGERADA Y VAR. G42"
-            espesor="15"
-            costo="621.83"
-            costoTotal="31091.56"
+            espesor={LosaAligerada[0].espesor}
+            costo={thousands_separators((LosaAligerada[0].precio * 1.2).toFixed(2))}
+            costoTotal={thousands_separators(((LosaAligerada[0].precio * 1.2) * area).toFixed(2))}
+            cimbrado="5.2"
+            ejecucion="6.6"
           />
         </div>
       </div>

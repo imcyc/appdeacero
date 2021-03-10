@@ -67,8 +67,8 @@ export default function Formulario() {
           <input type="number" step="0.01" name="area" placeholder="Ingresar el Área en metros" />
           <h3><TiArrowRight /> DESTINO (CARGA VIVA <span className={styles.carga}>{carga}</span> kg/m<sup>2</sup>):</h3>
           <select name="destino" onChange={calcularCarga}>
-            <option value="entrepiso">ENTREPISO</option>
-            <option value="azotea">AZOTEA</option>
+            <option value="Entrepiso">ENTREPISO</option>
+            <option value="Azotea">AZOTEA</option>
           </select>
           <h3><TiArrowRight /> LONGITUD DEL CLARO EN METROS:</h3>
           <select name="claro">
