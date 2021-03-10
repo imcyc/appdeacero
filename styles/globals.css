@@ -147,6 +147,7 @@ p.carga {
 @media (max-width: 600px) {
   .datos {
     flex-direction: column;
+    padding: 10px 10px;
   }
   .datos div {
     width: 100%;
