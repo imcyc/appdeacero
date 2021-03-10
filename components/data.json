@@ -138,5 +138,145 @@
     "destino": "Entrepiso",
     "espesor": 20,
     "precio": 496.13
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 3,
+    "destino": "Azotea",
+    "espesor": 10,
+    "precio": 429.94
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 3,
+    "destino": "Entrepiso",
+    "espesor": 10,
+    "precio": 437.64
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 3.5,
+    "destino": "Azotea",
+    "espesor": 12,
+    "precio": 485.22
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 3.5,
+    "destino": "Entrepiso",
+    "espesor": 12,
+    "precio": 492.92
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 4,
+    "destino": "Azotea",
+    "espesor": 13.5,
+    "precio": 530.04
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 4,
+    "destino": "Entrepiso",
+    "espesor": 13.5,
+    "precio": 537.74
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 4.5,
+    "destino": "Azotea",
+    "espesor": 15,
+    "precio": 576.84
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 4.5,
+    "destino": "Entrepiso",
+    "espesor": 15,
+    "precio": 584.54
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 5,
+    "destino": "Azotea",
+    "espesor": 17,
+    "precio": 632.33
+  },
+  {
+    "tipo": "LosaSolida",
+    "longitud": 5,
+    "destino": "Entrepiso",
+    "espesor": 17,
+    "precio": 640.03
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 3,
+    "destino": "Azotea",
+    "espesor": 14,
+    "precio": 442.52
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 3,
+    "destino": "Entrepiso",
+    "espesor": 14,
+    "precio": 450.22
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 3.5,
+    "destino": "Azotea",
+    "espesor": 14,
+    "precio": 446.55
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 3.5,
+    "destino": "Entrepiso",
+    "espesor": 14,
+    "precio": 454.25
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 4,
+    "destino": "Azotea",
+    "espesor": 16,
+    "precio": 478.52
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 4,
+    "destino": "Entrepiso",
+    "espesor": 16,
+    "precio": 486.22
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 4.5,
+    "destino": "Azotea",
+    "espesor": 18,
+    "precio": 510.49
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 4.5,
+    "destino": "Entrepiso",
+    "espesor": 18,
+    "precio": 518.19
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 5,
+    "destino": "Azotea",
+    "espesor": 20,
+    "precio": 542.46
+  },
+  {
+    "tipo": "LosaAligerada",
+    "longitud": 5,
+    "destino": "Entrepiso",
+    "espesor": 20,
+    "precio": 550.16
   }
 ]
