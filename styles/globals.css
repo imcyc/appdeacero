@@ -47,7 +47,7 @@ footer p {
 
 .resultados .header h2 {
   margin: 0;
-  padding: 10px;
+  padding: 0px;
   font-size: 2rem;
   padding-bottom: 0;
   color: #333;
@@ -63,8 +63,43 @@ footer p {
 .resultados .header h2.naranja {
   color: #ff5001;
   margin: 0;
+  padding: 0;
+  padding-bottom: 10px !important;
+  font-weight: 100;
+}
+
+.datos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+}
+
+.datos div {
+  padding: 5px;
+  flex-grow: 1;
+}
+
+.datos h2 {
+  margin: 0;
+  padding: 5px;
+  color: #fff;
+  font-size: 1rem;
+  background: #111;
+  width: 100%;
+  margin: 2px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .datos {
+    flex-direction: column;
+  }
+  .datos div {
+    width: 100%;
+  }
 }
