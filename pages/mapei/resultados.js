@@ -23,22 +23,57 @@ function Resultados() {
         </div>
         <div className="datos">
           <div>
-            <h2><span class="lnr lnr-chevron-right"></span> ÁREA: {area} mts<sup>2</sup></h2>
-            <h2><span class="lnr lnr-chevron-right"></span> DESTINO: {destino}</h2>
-            <h2><span class="lnr lnr-chevron-right"></span> LONGITUD DE CLARO: {claro} mt.</h2>
+            <h2><span className="lnr lnr-chevron-right"></span> ÁREA: {area} mt<sup>2</sup></h2>
+            <h2><span className="lnr lnr-chevron-right"></span> DESTINO: {destino}</h2>
+            <h2><span className="lnr lnr-chevron-right"></span> LONGITUD DE CLARO: {claro} mt.</h2>
           </div>
           <div>
-            <h2><span class="lnr lnr-chevron-right"></span> PRECIO DEL CONCRETO: $ {pconcreto}</h2>
-            <h2><span class="lnr lnr-chevron-right"></span> PRECIO DE LA MALLA SOLDADA: $ {pmalla}</h2>
-            <h2><span class="lnr lnr-chevron-right"></span> PRECIO DE LA VARILLA G42: $ {pvar}</h2>
+            <h2><span className="lnr lnr-chevron-right"></span> PRECIO DEL CONCRETO: $ {pconcreto}</h2>
+            <h2><span className="lnr lnr-chevron-right"></span> PRECIO DE LA MALLA SOLDADA: $ {pmalla}</h2>
+            <h2><span className="lnr lnr-chevron-right"></span> PRECIO DE LA VARILLA G42: $ {pvar}</h2>
           </div>
         </div>
         <div className="layt">
           <div>
-            <h1>RESULTADOS</h1>
+            <h2><span class="lnr lnr-arrow-right"></span> VIG-BOV Alma Abierta</h2>
+            <hr/>
+            <div className="datos">
+              <p className="esp">ESPESOR LOSA</p>
+              <p>18 cm</p>
+            </div>
+            <div className="datos">
+              <p className="esp">COSTO</p>
+              <p>$ 534.30 mt<sup>2</sup></p>
+            </div>
+            <div className="datos">
+              <p className="esp">COSTO TOTAL</p>
+              <p>$ 26,714.79</p>
+            </div>
+            <div className="datos">
+              <p className="esp">CIMBRADO</p>
+              <p>1.6 JOR</p>
+            </div>
+            <div className="datos">
+              <p className="esp">EJECUCIÓN TOTAL</p>
+              <p>4.9 JOR</p>
+            </div>
+            <div className="datos">
+              <p className="esp">JOR = Jornada de trabajo<br/>1 Carpintero y 1 Ayudante</p>
+            </div>
           </div>
           <div>
-            <h1>RESULTADOS</h1>
+            <h2><span class="lnr lnr-arrow-right"></span> VIG-BOV Pretensada</h2>
+            <hr/>
+          </div>
+        </div>
+        <div className="layt dos">
+          <div>
+            <h2><span class="lnr lnr-arrow-right"></span> LOSA SÓLIDA Y VAR. G42</h2>
+            <hr/>
+          </div>
+          <div>
+            <h2><span class="lnr lnr-arrow-right"></span> LOSA ALIGERADA Y VAR. G42</h2>
+            <hr/>
           </div>
         </div>
       </div>

@@ -41,8 +41,8 @@
 }
 
 .forma input:focus {
-  border: 2px solid #FF5001;
-  background: #FF5001;
+  border: 2px solid #222;
+  background: #222;
   color: #fff;
 }
 
