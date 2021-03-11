@@ -21,8 +21,6 @@ function Resultados() {
     return num_parts.join(".");
   }
 
-  console.log(claro);
-
   const VigBovAA = data.filter(dato => dato.tipo === "VigBovAA" && dato.longitud == claro && dato.destino === destino);
 
   const VigBovPretensada = data.filter(dato => dato.tipo === "VigBovPretensada" && dato.longitud == claro && dato.destino === destino);
@@ -30,8 +28,6 @@ function Resultados() {
   const LosaSolida = data.filter(dato => dato.tipo === "LosaSolida" && dato.longitud == claro && dato.destino === destino);
 
   const LosaAligerada = data.filter(dato => dato.tipo === "LosaAligerada" && dato.longitud == claro && dato.destino === destino);
-
-  console.log("VigAA" + JSON.stringify(VigBovAA));
 
   return (
     <Layout>
