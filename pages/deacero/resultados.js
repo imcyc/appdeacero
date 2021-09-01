@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router'
-import Layout from '../../components/Layout'
-import Datos from '../../components/datos'
+import { useRouter } from 'next/router';
+import Layout from '../../components/Layout';
+import Datos from '../../components/datos';
 
 let data = require('../../components/data.json');
 

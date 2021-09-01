@@ -79,3 +79,39 @@
 .carga {
   color: #FF5001;
 }
+
+.admindeacero {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 120px;
+  width: 100%;
+}
+
+.admindeacero form {
+  margin: 90px 500px;
+}
+
+.admindeacero form h3 {
+  text-align: left;
+}
+
+.admindeacero form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .admindeacero form {
+    margin: 90px 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .admindeacero form {
+    margin: 90px 100px;
+  }
+}
