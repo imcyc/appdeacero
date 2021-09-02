@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Layout from './components/Layout';
-import Datos from './components/datos';
+import Layout from '../components/Layout';
+import Datos from '../components/datos';
 
-let data = require('./components/data.json');
+
 
 function Resultados() {
+
+  const [datos, setDatos] = useState();
+  const [vigBovAA, setVigBovAA] = useState({});
+
+  useEffect(() => {
+    let data = require('../components/data.json');
+    setDatos(data)
+    setVigBovAA(data.filter(dato => dato.tipo === "VigBovAA" && dato.longitud == claro && dato.destino === destino))
+  }, []);
+
   const router = useRouter()
   const area = router.query.area;
   const destino = router.query.destino;
@@ -14,6 +24,16 @@ function Resultados() {
   const pmalla = router.query.pmalla;
   const pvar = router.query.pvar;
 
+  if(!datos){
+    return(
+      <div>
+        CARGANDO
+      </div>
+    )
+  }
+
+  console.log('los datos: ' + datos);
+
   function thousands_separators(num)
   {
     var num_parts = num.toString().split(".");
@@ -21,13 +41,13 @@ function Resultados() {
     return num_parts.join(".");
   }
 
-  const VigBovAA = data.filter(dato => dato.tipo === "VigBovAA" && dato.longitud == claro && dato.destino === destino);
+  const VigBovPretensada = datos.filter(dato => dato.tipo === "VigBovPretensada" && dato.longitud == claro && dato.destino === destino);
 
-  const VigBovPretensada = data.filter(dato => dato.tipo === "VigBovPretensada" && dato.longitud == claro && dato.destino === destino);
+  const LosaSolida = datos.filter(dato => dato.tipo === "LosaSolida" && dato.longitud == claro && dato.destino === destino);
 
-  const LosaSolida = data.filter(dato => dato.tipo === "LosaSolida" && dato.longitud == claro && dato.destino === destino);
+  const LosaAligerada = datos.filter(dato => dato.tipo === "LosaAligerada" && dato.longitud == claro && dato.destino === destino);
 
-  const LosaAligerada = data.filter(dato => dato.tipo === "LosaAligerada" && dato.longitud == claro && dato.destino === destino);
+  console.log(vigBovAA);
 
   return (
     <Layout>
@@ -52,6 +72,8 @@ function Resultados() {
           </div>
         </div>
         <div className="layt">
+        {vigBovAA.espesor}
+          {/* 
           <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
@@ -70,8 +92,10 @@ function Resultados() {
             cimbrado="1.6"
             ejecucion="5.2"
           />
+          */}
         </div>
         <div className="layt dos">
+          {/* 
           <Datos 
             bkg="tres"
             titulo="LOSA SÓLIDA Y VAR. G42"
@@ -90,6 +114,7 @@ function Resultados() {
             cimbrado="5.2"
             ejecucion="6.6"
           />
+          */}
         </div>
       </div>
     </Layout>
