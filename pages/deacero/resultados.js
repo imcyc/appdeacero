@@ -55,7 +55,7 @@ function Resultados() {
           <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
-            espesor={VigBovAA[0].espesor}
+            espesor={VigBovAA[0].espesor ? 0 : VigBovAA[0].espesor}
             costo={VigBovAA[0].precio * 1.2}
             costoTotal={thousands_separators(((VigBovAA[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="1.6"
@@ -64,7 +64,7 @@ function Resultados() {
           <Datos 
             bkg="dos"
             titulo="VIG-BOV Pretensada"
-            espesor={VigBovPretensada[0].espesor}
+            espesor={VigBovPretensada[0].espesor ? 0 : VigBovAA[0].espesor}
             costo={VigBovPretensada[0].precio * 1.2}
             costoTotal={thousands_separators(((VigBovPretensada[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="1.6"
@@ -75,7 +75,7 @@ function Resultados() {
           <Datos 
             bkg="tres"
             titulo="LOSA SÓLIDA Y VAR. G42"
-            espesor={LosaSolida[0].espesor}
+            espesor={LosaSolida[0].espesor ? 0 : VigBovAA[0].espesor}
             costo={LosaSolida[0].precio * 1.2}
             costoTotal={thousands_separators(((LosaSolida[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="5.2"
@@ -84,7 +84,7 @@ function Resultados() {
           <Datos 
             bkg="cuatro"
             titulo="LOSA ALIGERADA Y VAR. G42"
-            espesor={LosaAligerada[0].espesor}
+            espesor={LosaAligerada[0].espesor ? 0 : VigBovAA[0].espesor}
             costo={thousands_separators((LosaAligerada[0].precio * 1.2).toFixed(2))}
             costoTotal={thousands_separators(((LosaAligerada[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="5.2"
