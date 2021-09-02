@@ -104,6 +104,17 @@
   margin-bottom: 20px;
 }
 
+.mapei .btnentrar {
+  margin-top: 20px;
+  background-color: #FF5001;
+  color: #fff;
+  padding: 5px 15px;
+  font-weight: bold;
+  transition: all 1s;
+  font-size: 1.5rem;
+  display: block;
+}
+
 @media (max-width: 900px) {
   .admindeacero form {
     margin: 90px 100px;

@@ -12,8 +12,12 @@ export default function Home() {
         <h1 style={{margin: '0'}}>CALCULADORA DE LOSAS PARA VIVIENDA</h1>
         <hr/>
         <Link href="/deacero/formulario" className="mt-3">
-          <a className={styles.btn}>
-            COMENZAR A CALCULAR
+          <a className={styles.btnentrar}>
+            COMENZAR A CALCULAR <TiArrowRight style={{
+              'position':'absolute',
+              'marginTop':'8px',
+              'marginLeft':'80px'
+            }}/>
           </a>
         </Link>
       </main>
