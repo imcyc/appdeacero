@@ -9,11 +9,13 @@ function Resultados() {
 
   const [datos, setDatos] = useState();
   const [vigBovAA, setVigBovAA] = useState({});
+  const [vigBovPretensada, setVigBovPretensada] = useState({});
 
   useEffect(() => {
     let data = require('../components/data.json');
-    setDatos(data)
-    setVigBovAA(data.filter(dato => dato.tipo === "VigBovAA" && dato.longitud == claro && dato.destino === destino))
+    setDatos(data);
+    setVigBovAA(data.filter(dato => dato.tipo === "VigBovAA" && dato.longitud == claro && dato.destino === destino));
+    setVigBovPretensada(data.filter(dato => dato.tipo === "VigBovPretensada" && dato.longitud == claro && dato.destino === destino))
   }, []);
 
   const router = useRouter()
@@ -41,7 +43,6 @@ function Resultados() {
     return num_parts.join(".");
   }
 
-  const VigBovPretensada = datos.filter(dato => dato.tipo === "VigBovPretensada" && dato.longitud == claro && dato.destino === destino);
 
   const LosaSolida = datos.filter(dato => dato.tipo === "LosaSolida" && dato.longitud == claro && dato.destino === destino);
 
@@ -72,27 +73,24 @@ function Resultados() {
           </div>
         </div>
         <div className="layt">
-        {vigBovAA.espesor}
-          {/* 
           <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
-            espesor={VigBovAA[0].espesor}
-            costo={VigBovAA[0].precio * 1.2}
-            costoTotal={thousands_separators(((VigBovAA[0].precio * 1.2) * area).toFixed(2))}
+            espesor={vigBovAA[0].espesor}
+            costo={vigBovAA[0].precio * 1.2}
+            costoTotal={thousands_separators(((vigBovAA[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="1.6"
             ejecucion="4.9"
           />
           <Datos 
             bkg="dos"
             titulo="VIG-BOV Pretensada"
-            espesor={VigBovPretensada[0].espesor}
-            costo={VigBovPretensada[0].precio * 1.2}
-            costoTotal={thousands_separators(((VigBovPretensada[0].precio * 1.2) * area).toFixed(2))}
+            espesor={vigBovPretensada[0].espesor}
+            costo={vigBovPretensada[0].precio * 1.2}
+            costoTotal={thousands_separators(((vigBovPretensada[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="1.6"
             ejecucion="5.2"
           />
-          */}
         </div>
         <div className="layt dos">
           {/* 
