@@ -10,12 +10,16 @@ function Resultados() {
   const [datos, setDatos] = useState();
   const [vigBovAA, setVigBovAA] = useState({});
   const [vigBovPretensada, setVigBovPretensada] = useState({});
+  const [losaSolida, setLosaSolida] = useState({});
+  const [losaAligerada, setLosaAligerada] = useState({});
 
   useEffect(() => {
     let data = require('../components/data.json');
     setDatos(data);
     setVigBovAA(data.filter(dato => dato.tipo === "VigBovAA" && dato.longitud == claro && dato.destino === destino));
-    setVigBovPretensada(data.filter(dato => dato.tipo === "VigBovPretensada" && dato.longitud == claro && dato.destino === destino))
+    setVigBovPretensada(data.filter(dato => dato.tipo === "VigBovPretensada" && dato.longitud == claro && dato.destino === destino));
+    setLosaSolida(data.filter(dato => dato.tipo === "LosaSolida" && dato.longitud == claro && dato.destino === destino));
+    setLosaAligerada(data.filter(dato => dato.tipo === "LosaAligerada" && dato.longitud == claro && dato.destino === destino));
   }, []);
 
   const router = useRouter()
@@ -32,30 +36,21 @@ function Resultados() {
         CARGANDO
       </div>
     )
-  }
-
-  console.log('los datos: ' + datos);
+  };
 
   function thousands_separators(num)
   {
     var num_parts = num.toString().split(".");
     num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return num_parts.join(".");
-  }
-
-
-  const LosaSolida = datos.filter(dato => dato.tipo === "LosaSolida" && dato.longitud == claro && dato.destino === destino);
-
-  const LosaAligerada = datos.filter(dato => dato.tipo === "LosaAligerada" && dato.longitud == claro && dato.destino === destino);
-
-  console.log(vigBovAA);
+  };
 
   return (
     <Layout>
       <div className="resultados">
         <div className="header">
           <img src="/logo-deacero.svg" alt="Calculadoras para la construcción - Instituto Mexicano del Cemento y del Concreto A.C" style={{width: '200px'}} />
-          <h2>APP DE LOSAS PARA VIVIENDA</h2>
+          <h2>LOSAS PARA VIVIENDA</h2>
           <h3>LOSAS EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
@@ -93,26 +88,24 @@ function Resultados() {
           />
         </div>
         <div className="layt dos">
-          {/* 
           <Datos 
             bkg="tres"
             titulo="LOSA SÓLIDA Y VAR. G42"
-            espesor={LosaSolida[0].espesor}
-            costo={LosaSolida[0].precio * 1.2}
-            costoTotal={thousands_separators(((LosaSolida[0].precio * 1.2) * area).toFixed(2))}
+            espesor={losaSolida[0].espesor}
+            costo={losaSolida[0].precio * 1.2}
+            costoTotal={thousands_separators(((losaSolida[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="5.2"
             ejecucion="8.1"
           />
           <Datos 
             bkg="cuatro"
             titulo="LOSA ALIGERADA Y VAR. G42"
-            espesor={LosaAligerada[0].espesor}
-            costo={thousands_separators((LosaAligerada[0].precio * 1.2).toFixed(2))}
-            costoTotal={thousands_separators(((LosaAligerada[0].precio * 1.2) * area).toFixed(2))}
+            espesor={losaAligerada[0].espesor}
+            costo={thousands_separators((losaAligerada[0].precio * 1.2).toFixed(2))}
+            costoTotal={thousands_separators(((losaAligerada[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="5.2"
             ejecucion="6.6"
           />
-          */}
         </div>
       </div>
     </Layout>
