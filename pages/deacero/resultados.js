@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
+import styles from '../../styles/Mapei.module.css';
 import Datos from '../components/datos';
+import { getWhyNextReasons } from "../../lib/api";
 
-
-
-function Resultados() {
+function Resultados({ reasons }) {
 
   const [datos, setDatos] = useState();
   const [vigBovAA, setVigBovAA] = useState({});
@@ -47,6 +48,24 @@ function Resultados() {
 
   return (
     <Layout>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {reasons
+            .slice(0, reasons.length - 1)
+            .map(({ title, description, href }) => (
+              <a
+                className="border border-grey-200 rounded p-4 hover:shadow-lg hover:border-transparent"
+                key={title}
+                href={href}
+                target="_blank"
+              >
+                <h3 className="font-bold mb-2">{title}</h3>
+                <div dangerouslySetInnerHTML={{ __html: description }} />
+                <span className="text-blue-600 hover:text-blue-400 hover:underline mt-4 block">
+                  Documentation →
+                </span>
+              </a>
+            ))}
+        </div>
       <div className="resultados">
         <div className="header">
           <img src="/logo-deacero.svg" alt="Calculadoras para la construcción - Instituto Mexicano del Cemento y del Concreto A.C" style={{width: '200px'}} />
@@ -107,9 +126,30 @@ function Resultados() {
             ejecucion="6.6"
           />
         </div>
+        <div className="layt tres">
+          <hr/>
+          <Link href="/deacero/formulario">
+            <h2 className={styles.volvercalcular}>VOLVER A CALCULAR</h2>
+          </Link>
+        </div>
       </div>
+      
     </Layout>
   )
+};
+
+export async function getStaticProps(context) {
+  const reasons = await getWhyNextReasons();
+
+  return {
+    props: {
+      reasons,
+    },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every second
+    revalidate: 1, // In seconds
+  };
 }
 
 export default Resultados;
