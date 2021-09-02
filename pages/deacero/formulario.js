@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import Layout from '../../components/Layout'
+import Layout from '../components/Layout'
 import styles from '../../styles/Mapei.module.css'
 import { TiArrowRight } from 'react-icons/ti';
 
