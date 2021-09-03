@@ -7,37 +7,21 @@ import Datos from '../components/datos';
 import { getWhyNextReasons } from "../../lib/api";
 
 function Resultados({ reasons }) {
-
-  const [datos, setDatos] = useState();
-  const [vigBovAA, setVigBovAA] = useState({});
-  const [vigBovPretensada, setVigBovPretensada] = useState({});
-  const [losaSolida, setLosaSolida] = useState({});
-  const [losaAligerada, setLosaAligerada] = useState({});
+  const [area, setArea] = useState(0);
+  const [destino, setDestino] = useState(0);
+  const [claro, setClaro] = useState(0);
+  const [pconcreto, setPconcreto] = useState(0);
+  const [pmalla, setPmalla] = useState(0);
+  const [pvar, setPvar] = useState(0);
 
   useEffect(() => {
-    let data = require('../components/data.json');
-    setDatos(data);
-    setVigBovAA(data.filter(dato => dato.tipo === "VigBovAA" && dato.longitud == claro && dato.destino === destino));
-    setVigBovPretensada(data.filter(dato => dato.tipo === "VigBovPretensada" && dato.longitud == claro && dato.destino === destino));
-    setLosaSolida(data.filter(dato => dato.tipo === "LosaSolida" && dato.longitud == claro && dato.destino === destino));
-    setLosaAligerada(data.filter(dato => dato.tipo === "LosaAligerada" && dato.longitud == claro && dato.destino === destino));
-  }, []);
-
-  const router = useRouter()
-  const area = router.query.area;
-  const destino = router.query.destino;
-  const claro = Number(router.query.claro);
-  const pconcreto = router.query.pconcreto;
-  const pmalla = router.query.pmalla;
-  const pvar = router.query.pvar;
-
-  if(!datos){
-    return(
-      <div>
-        CARGANDO
-      </div>
-    )
-  };
+    setArea(localStorage.getItem('area'));
+    setDestino(localStorage.getItem('destino'));
+    setClaro(localStorage.getItem('claro'));
+    setPconcreto(localStorage.getItem('pconcreto'));
+    setPmalla(localStorage.getItem('pmalla'));
+    setPvar(localStorage.getItem('pvar'));
+  }, [area, destino, claro, pconcreto, pmalla, pvar]);
 
   function thousands_separators(num)
   {
@@ -46,10 +30,13 @@ function Resultados({ reasons }) {
     return num_parts.join(".");
   };
 
+  console.log(reasons);
+  console.log(area);
+
   return (
     <Layout>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {reasons
+          {/*reasons
             .slice(0, reasons.length - 1)
             .map(({ title, description, href }) => (
               <a
@@ -64,7 +51,7 @@ function Resultados({ reasons }) {
                   Documentation →
                 </span>
               </a>
-            ))}
+            ))*/}
         </div>
       <div className="resultados">
         <div className="header">
@@ -87,6 +74,7 @@ function Resultados({ reasons }) {
           </div>
         </div>
         <div className="layt">
+          {/* 
           <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
@@ -105,8 +93,10 @@ function Resultados({ reasons }) {
             cimbrado="1.6"
             ejecucion="5.2"
           />
+          */}
         </div>
         <div className="layt dos">
+          {/* 
           <Datos 
             bkg="tres"
             titulo="LOSA SÓLIDA Y VAR. G42"
@@ -125,6 +115,7 @@ function Resultados({ reasons }) {
             cimbrado="5.2"
             ejecucion="6.6"
           />
+          */}
         </div>
         <div className="layt tres">
           <hr/>
@@ -139,11 +130,12 @@ function Resultados({ reasons }) {
 };
 
 export async function getStaticProps(context) {
+  
   const reasons = await getWhyNextReasons();
 
   return {
     props: {
-      reasons,
+      reasons
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

@@ -9,35 +9,18 @@ export default function Formulario() {
   const router = useRouter()
 
   const [carga, setCarga] = useState(170);
-  const [datos, setDatos] = useState({
-    area: 0,
-    destino: "",
-    claro: 0,
-    pconcreto: 0,
-    pmalla: 0,
-    pvar: 0
-  });
 
   const calcular = (e) => {
     e.preventDefault();
-    const area = e.target.area.value;
-    const destino = e.target.destino.value;
-    const claro = e.target.claro.value;
-    const pconcreto = e.target.pconcreto.value;
-    const pmalla = e.target.pmalla.value;
-    const pvar = e.target.pvar.value;
-    console.log(destino);
+    localStorage.setItem('area', e.target.area.value);
+    localStorage.setItem('destino', e.target.destino.value);
+    localStorage.setItem('claro', e.target.claro.value);
+    localStorage.setItem('pconcreto', e.target.pconcreto.value);
+    localStorage.setItem('pmalla', e.target.pmalla.value);
+    localStorage.setItem('pvar', e.target.pvar.value);
 
     router.push({
-      pathname: "/deacero/resultados",
-      query: {
-        area: area,
-        destino: destino,
-        claro: claro,
-        pconcreto: pconcreto,
-        pmalla: pmalla,
-        pvar: pvar
-      }
+      pathname: "/deacero/resultados"
     })
   }
 
