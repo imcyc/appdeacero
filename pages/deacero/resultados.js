@@ -13,8 +13,8 @@ function Resultados({ reasons }) {
   const [pconcreto, setPconcreto] = useState(0);
   const [pmalla, setPmalla] = useState(0);
   const [pvar, setPvar] = useState(0);
-  const [vigBovAA, setVigBovAA] = useState(0);
-  const [vigBovPretensada, setVigBovPretensada] = useState(0);
+  const [vigBovAA, setVigBovAA] = useState();
+  const [vigBovPretensada, setVigBovPretensada] = useState();
 
   useEffect(() => {
     setArea(localStorage.getItem('area'));
@@ -24,8 +24,8 @@ function Resultados({ reasons }) {
     setPmalla(localStorage.getItem('pmalla'));
     setPvar(localStorage.getItem('pvar'));
 
-    setVigBovAA(reasons.filter(dato => dato.tipo == "Vig-Bov. A.A." && dato.claro == toString(claro) && dato.zona == destino));
-    setVigBovPretensada(reasons.filter(dato => dato.tipo == "Vig-Bov. Pretensada" && dato.claro == toString(claro) && dato.zona == destino));
+    setVigBovAA(reasons.filter(dato => dato.tipo == "Vig-Bov. A.A." && dato.claro == claro && dato.zona == destino));
+    setVigBovPretensada(reasons.filter(dato => dato.tipo == "Vig-Bov. Pretensada" && dato.claro == claro && dato.zona == destino));
 
   }, [area, destino, claro, pconcreto, pmalla, pvar]);
 
@@ -38,6 +38,8 @@ function Resultados({ reasons }) {
 
   console.log(reasons);
   console.log(area);
+
+  console.log('viguetas: '+ JSON.stringify(vigBovAA));
 
   return (
     <Layout>
@@ -62,24 +64,26 @@ function Resultados({ reasons }) {
           </div>
         </div>
         <div className="layt">
+          
           <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
-            espesor={vigBovAA.espesor}
-            costo={vigBovAA.precio * 1.2}
-            costoTotal={thousands_separators(((vigBovAA.precio * 1.2) * area).toFixed(2))}
+            espesor={vigBovAA[0].espesor}
+            costo={vigBovAA[0].precio * 1.2}
+            costoTotal={thousands_separators(((vigBovAA[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="1.6"
             ejecucion="4.9"
           />
           <Datos 
             bkg="dos"
             titulo="VIG-BOV Pretensada"
-            espesor={vigBovPretensada.espesor}
-            costo={vigBovPretensada.precio * 1.2}
-            costoTotal={thousands_separators(((vigBovPretensada.precio * 1.2) * area).toFixed(2))}
+            espesor={vigBovPretensada[0].espesor}
+            costo={vigBovPretensada[0].precio * 1.2}
+            costoTotal={thousands_separators(((vigBovPretensada[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="1.6"
             ejecucion="5.2"
           />
+          
         </div>
         <div className="layt dos">
           {/* 
