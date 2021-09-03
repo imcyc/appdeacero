@@ -77,9 +77,10 @@ footer p {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #ff5001;;
+  background: #ff5001;
   padding: 10px 90px;
-  box-shadow: 0 0 10px #444 inset;
+  box-shadow: 0 0 10px #444;
+  border-bottom: 5px solid;
 }
 
 .datos div {
@@ -105,7 +106,7 @@ footer p {
 }
 
 .layt.dos {
-  padding-bottom: 100px;
+  padding-bottom: 10px;
 }
 
 .layt div {
@@ -143,6 +144,27 @@ footer p {
 p.carga {
   margin: 0;
   padding: 0;
+}
+
+.layt.tres {
+  margin-bottom: 150px !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.layt.tres h2 {
+  padding: 10px 70px;
+  background: #ff5001;
+  cursor: pointer;
+  transition: all 1s;
+  color: #fff;
+}
+
+.layt.tres h2:hover {
+  background: #333 !important;
+  color: #fff;
 }
 
 @media (max-width: 600px) {

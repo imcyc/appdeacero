@@ -4,7 +4,7 @@ function Datos({titulo, espesor, costo, costoTotal, cimbrado, ejecucion}) {
   return (
     <div>
       <div>
-        <h2><span class="lnr lnr-arrow-right"></span> {titulo}</h2>
+        <h2><span className="lnr lnr-arrow-right"></span> {titulo}</h2>
         <hr />
         <div className="datos">
           <p className="esp"><span className="lnr lnr-arrow-right"></span> ESPESOR LOSA</p>
@@ -27,7 +27,8 @@ function Datos({titulo, espesor, costo, costoTotal, cimbrado, ejecucion}) {
           <p>{ejecucion} JOR</p>
         </div>
         <div className="datos">
-          <p className="esp"><span class="lnr lnr-plus-circle"></span> JOR = Jornada de trabajo<br /><span class="lnr lnr-plus-circle"></span> 1 Carpintero y 1 Ayudante</p>
+          <p className="esp"><span className="lnr lnr-plus-circle"></span> JOR = Jornada de trabajo<br />
+          <span className="lnr lnr-plus-circle"></span> 1 Carpintero y 1 Ayudante</p>
         </div>
       </div>
     </div>

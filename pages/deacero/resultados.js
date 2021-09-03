@@ -13,8 +13,10 @@ function Resultados({ reasons }) {
   const [pconcreto, setPconcreto] = useState(0);
   const [pmalla, setPmalla] = useState(0);
   const [pvar, setPvar] = useState(0);
-  const [vigBovAA, setVigBovAA] = useState();
-  const [vigBovPretensada, setVigBovPretensada] = useState();
+  const [vigBovAA, setVigBovAA] = useState([]);
+  const [vigBovPretensada, setVigBovPretensada] = useState([]);
+  const [losasolida, setLosasolida] = useState([]);
+  const [losaligerada, setLosaaligerada] = useState([]);
 
   useEffect(() => {
     setArea(localStorage.getItem('area'));
@@ -26,6 +28,8 @@ function Resultados({ reasons }) {
 
     setVigBovAA(reasons.filter(dato => dato.tipo == "Vig-Bov. A.A." && dato.claro == claro && dato.zona == destino));
     setVigBovPretensada(reasons.filter(dato => dato.tipo == "Vig-Bov. Pretensada" && dato.claro == claro && dato.zona == destino));
+    setLosasolida(reasons.filter(dato => dato.tipo == "Losa Sólida" && dato.claro == claro && dato.zona == destino));
+    setLosaaligerada(reasons.filter(dato => dato.tipo == "Losa Aligerada" && dato.claro == claro && dato.zona == destino));
 
   }, [area, destino, claro, pconcreto, pmalla, pvar]);
 
@@ -38,6 +42,14 @@ function Resultados({ reasons }) {
 
   console.log(reasons);
   console.log(area);
+
+  if(!vigBovAA.length || !vigBovPretensada.length || !losasolida.length || !losaligerada.length){
+    return(
+      <div>
+        CARGANDO
+      </div>
+    )
+  };
 
   console.log('viguetas: '+ JSON.stringify(vigBovAA));
 
@@ -64,7 +76,6 @@ function Resultados({ reasons }) {
           </div>
         </div>
         <div className="layt">
-          
           <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
@@ -83,32 +94,28 @@ function Resultados({ reasons }) {
             cimbrado="1.6"
             ejecucion="5.2"
           />
-          
         </div>
         <div className="layt dos">
-          {/* 
           <Datos 
             bkg="tres"
             titulo="LOSA SÓLIDA Y VAR. G42"
-            espesor={losaSolida[0].espesor}
-            costo={losaSolida[0].precio * 1.2}
-            costoTotal={thousands_separators(((losaSolida[0].precio * 1.2) * area).toFixed(2))}
+            espesor={losasolida[0].espesor}
+            costo={losasolida[0].precio * 1.2}
+            costoTotal={thousands_separators(((losasolida[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="5.2"
             ejecucion="8.1"
           />
           <Datos 
             bkg="cuatro"
             titulo="LOSA ALIGERADA Y VAR. G42"
-            espesor={losaAligerada[0].espesor}
-            costo={thousands_separators((losaAligerada[0].precio * 1.2).toFixed(2))}
-            costoTotal={thousands_separators(((losaAligerada[0].precio * 1.2) * area).toFixed(2))}
+            espesor={losaligerada[0].espesor}
+            costo={thousands_separators((losaligerada[0].precio * 1.2).toFixed(2))}
+            costoTotal={thousands_separators(((losaligerada[0].precio * 1.2) * area).toFixed(2))}
             cimbrado="5.2"
             ejecucion="6.6"
           />
-          */}
         </div>
         <div className="layt tres">
-          <hr/>
           <Link href="/deacero/formulario">
             <h2 className={styles.volvercalcular}>VOLVER A CALCULAR</h2>
           </Link>
