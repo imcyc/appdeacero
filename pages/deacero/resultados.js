@@ -82,7 +82,7 @@ function Resultados({ reasons }) {
             espesor={vigBovAA[0].espesor}
             costo={vigBovAA[0].precio * 1.2}
             costoTotal={thousands_separators(((vigBovAA[0].precio * 1.2) * area).toFixed(2))}
-            cimbrado="1.6"
+            cimbrado={area / 32}
             ejecucion="4.9"
           />
           <Datos 
@@ -91,7 +91,7 @@ function Resultados({ reasons }) {
             espesor={vigBovPretensada[0].espesor}
             costo={vigBovPretensada[0].precio * 1.2}
             costoTotal={thousands_separators(((vigBovPretensada[0].precio * 1.2) * area).toFixed(2))}
-            cimbrado="1.6"
+            cimbrado={area / 32}
             ejecucion="5.2"
           />
         </div>
@@ -102,7 +102,7 @@ function Resultados({ reasons }) {
             espesor={losasolida[0].espesor}
             costo={losasolida[0].precio * 1.2}
             costoTotal={thousands_separators(((losasolida[0].precio * 1.2) * area).toFixed(2))}
-            cimbrado="5.2"
+            cimbrado={area / 9.6}
             ejecucion="8.1"
           />
           <Datos 
@@ -111,7 +111,7 @@ function Resultados({ reasons }) {
             espesor={losaligerada[0].espesor}
             costo={thousands_separators((losaligerada[0].precio * 1.2).toFixed(2))}
             costoTotal={thousands_separators(((losaligerada[0].precio * 1.2) * area).toFixed(2))}
-            cimbrado="5.2"
+            cimbrado={area / 9.6}
             ejecucion="6.6"
           />
         </div>
