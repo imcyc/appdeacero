@@ -4,15 +4,18 @@ import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import styles from '../../styles/Mapei.module.css';
 import Datos from '../components/datos';
-import { getWhyNextReasons } from "../../lib/api";
+import data from '../components/data.json';
+//import { getWhyNextReasons } from "../../lib/api";
 
-function Resultados({ reasons }) {
+
+function Resultados() {
   const [area, setArea] = useState(0);
   const [destino, setDestino] = useState(0);
   const [claro, setClaro] = useState(0);
   const [pconcreto, setPconcreto] = useState(0);
   const [pmalla, setPmalla] = useState(0);
   const [pvar, setPvar] = useState(0);
+
   const [vigBovAA, setVigBovAA] = useState([]);
   const [vigBovPretensada, setVigBovPretensada] = useState([]);
   const [losasolida, setLosasolida] = useState([]);
@@ -26,10 +29,12 @@ function Resultados({ reasons }) {
     setPmalla(localStorage.getItem('pmalla'));
     setPvar(localStorage.getItem('pvar'));
 
-    setVigBovAA(reasons.filter(dato => dato.tipo == "Vig-Bov. A.A." && dato.claro == claro && dato.zona == destino));
-    setVigBovPretensada(reasons.filter(dato => dato.tipo == "Vig-Bov. Pretensada" && dato.claro == claro && dato.zona == destino));
-    setLosasolida(reasons.filter(dato => dato.tipo == "Losa Sólida" && dato.claro == claro && dato.zona == destino));
-    setLosaaligerada(reasons.filter(dato => dato.tipo == "Losa Aligerada" && dato.claro == claro && dato.zona == destino));
+    console.log(data);
+
+    setVigBovAA(data.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino));
+    setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
+    setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
+    setLosaaligerada(data.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino));
 
   }, [area, destino, claro, pconcreto, pmalla, pvar]);
 
@@ -40,10 +45,10 @@ function Resultados({ reasons }) {
     return num_parts.join(".");
   };
 
-  console.log(reasons);
-  console.log(area);
+  //console.log(reasons);
+  //console.log(area);
 
-  if(!vigBovAA.length || !vigBovPretensada.length || !losasolida.length || !losaligerada.length){
+  if(!data || vigBovAA.length === 0 || vigBovPretensada.length == 0 || losasolida.length == 0 || losaligerada.length == 0){
     return(
       <div>
         CARGANDO
@@ -125,20 +130,5 @@ function Resultados({ reasons }) {
     </Layout>
   )
 };
-
-export async function getStaticProps(context) {
-  
-  const reasons = await getWhyNextReasons();
-
-  return {
-    props: {
-      reasons
-    },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every second
-    revalidate: 1, // In seconds
-  };
-}
 
 export default Resultados;

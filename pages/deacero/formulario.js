@@ -72,7 +72,7 @@ export default function Formulario() {
           <h3><TiArrowRight /> MALLA SOLDADA 66-1010:</h3>
           <input type="number" step="0.01" name="pmalla" placeholder="Ingresar el precio en metros cuadrados, Ej. 23.70" />
           <hr/>
-          <h3><TiArrowRight /> VAR G42:</h3>
+          <h3><TiArrowRight /> VAR. G42:</h3>
           <input type="number" step="0.01" name="pvar" placeholder="Ingresar el precio de la VAR en kg., Ej. 15.40" />
         </div>
         <hr/>
