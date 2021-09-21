@@ -29,8 +29,6 @@ function Resultados() {
     setPmalla(localStorage.getItem('pmalla'));
     setPvar(localStorage.getItem('pvar'));
 
-    console.log(data);
-
     setVigBovAA(data.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino));
     setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
     setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
@@ -45,8 +43,39 @@ function Resultados() {
     return num_parts.join(".");
   };
 
-  //console.log(reasons);
-  //console.log(area);
+  let precio1VigBovAA = 0.0462*(parseFloat(pconcreto)+202.39)+(170+45.42)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
+  let precio0VigBovAA = precio1VigBovAA-0.5*pvar;
+  let precio3VigBovAA = 0.0537*(parseFloat(pconcreto)+202.39)+(170+45.42)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
+  let precio2VigBovAA = precio3VigBovAA-0.5*pvar;
+  let precio5VigBovAA = 0.0452*(parseFloat(pconcreto)+202.39)+(205+45.42)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
+  let precio4VigBovAA = precio5VigBovAA-0.5*pvar;
+  let precio7VigBovAA = 0.0467*(parseFloat(pconcreto)+202.39)+(240+45.42)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
+  let precio6VigBovAA = precio7VigBovAA-0.5*pvar;
+  let precio9VigBovAA = 0.0575*(parseFloat(pconcreto)+202.39)+(256.25+45.42)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
+  let precio8VigBovAA = precio9VigBovAA-0.5*pvar;
+
+  let costoTVigBovAA = 0;
+  if(destino === "Azotea" && claro == "3"){
+    costoTVigBovAA = precio0VigBovAA;
+  } else if(destino === "Entrepiso" && claro == "3"){
+    costoTVigBovAA = precio1VigBovAA;
+  } else if(destino === "Azotea" && claro == "3.5"){
+    costoTVigBovAA = precio2VigBovAA;
+  } else if(destino === "Entrepiso" && claro == "3.5"){
+    costoTVigBovAA = precio3VigBovAA;
+  } else if(destino === "Azotea" && claro == "4"){
+    costoTVigBovAA = precio4VigBovAA;
+  } else if(destino === "Entrepiso" && claro == "4"){
+    costoTVigBovAA = precio5VigBovAA;
+  } else if(destino === "Azotea" && claro == "4.5"){
+    costoTVigBovAA = precio6VigBovAA;
+  } else if(destino === "Entrepiso" && claro == "4.5"){
+    costoTVigBovAA = precio7VigBovAA;
+  } else if(destino === "Azotea" && claro == "5"){
+    costoTVigBovAA = precio8VigBovAA;
+  } else if(destino === "Entrepiso" && claro == "5"){
+    costoTVigBovAA = precio9VigBovAA;
+  }
 
   if(!data || vigBovAA.length === 0 || vigBovPretensada.length == 0 || losasolida.length == 0 || losaligerada.length == 0){
     return(
@@ -67,6 +96,11 @@ function Resultados() {
           <h3>LOSAS EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
+          <h3>{precio0VigBovAA.toFixed(2)} - {precio1VigBovAA.toFixed(2)}</h3>
+          <h3>{precio2VigBovAA.toFixed(2)} - {precio3VigBovAA.toFixed(2)}</h3>
+          <h3>{precio4VigBovAA.toFixed(2)} - {precio5VigBovAA.toFixed(2)}</h3>
+          <h3>{precio6VigBovAA.toFixed(2)} - {precio7VigBovAA.toFixed(2)}</h3>
+          <h3>{precio8VigBovAA.toFixed(2)} - {precio9VigBovAA.toFixed(2)}</h3>
         </div>
         <div className="datos">
           <div>
@@ -85,10 +119,10 @@ function Resultados() {
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
             espesor={vigBovAA[0].espesor}
-            costo={vigBovAA[0].precio * 1.2}
-            costoTotal={thousands_separators(((vigBovAA[0].precio * 1.2) * area).toFixed(2))}
-            cimbrado={area / 32}
-            ejecucion="4.9"
+            costo={(costoTVigBovAA * 1.2).toFixed(2)}
+            costoTotal={thousands_separators(((vigBovAA[0].costoTVigBovAA * 1.2) * area).toFixed(2))}
+            cimbrado={(area / 32).toFixed(2)}
+            ejecucion={((area / 32) + 2.6 + 0.3 + 0.4).toFixed(2)}
           />
           <Datos 
             bkg="dos"
