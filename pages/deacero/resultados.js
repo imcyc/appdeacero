@@ -143,6 +143,8 @@ function Resultados() {
     costoLosaSolida = precio9LosaSolida;
   };
 
+  let precio1LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+1.509*(15.4+4.03)+0.851*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
+
   let espesor = '';
   if(claro === "3"){
     espesor = '14';
@@ -177,6 +179,7 @@ function Resultados() {
           <h3>EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
+          <h3>{precio1LosaAligerada}</h3>
         </div>
         <div className="datos">
           <div>
