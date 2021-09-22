@@ -77,9 +77,10 @@ function Resultados() {
 
   let precio1VigBovPret = 0.0423*(parseFloat(pconcreto)+202.39)+((170+10)+45.42*1.1018)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
   let precio0VigBovPret = precio1VigBovPret-0.5*pvar;
+  let precio3VigBovPret = 0.0523*(parseFloat(pconcreto)+202.39)+((170+10)+45.42*1.1018)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
+  let precio2VigBovPret = precio3VigBovPret-0.5*pvar;
 
   let costoTVigBovPret = 0;
-
   let espesor = '';
   if(claro === "3"){
     espesor = '14';
@@ -115,6 +116,7 @@ function Resultados() {
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
           <h3>{precio0VigBovPret} - {precio1VigBovPret}</h3>
+          <h3>{precio2VigBovPret} - {precio3VigBovPret}</h3>
         </div>
         <div className="datos">
           <div>
