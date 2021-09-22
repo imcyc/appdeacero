@@ -88,15 +88,13 @@ function Resultados() {
     espesor = '20';
   }
 
-  if(!area){
+  if(!espesor){
     return(
       <div>
         CARGANDO
       </div>
     )
   };
-
-  console.log('viguetas: '+ JSON.stringify(vigBovAA));
 
   const cambioArea = (e) => {
     setArea(e.target.value)
