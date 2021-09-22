@@ -73,9 +73,22 @@ function Resultados() {
     costoTVigBovAA = precio8VigBovAA;
   } else if(destino === "Entrepiso" && claro == "5"){
     costoTVigBovAA = precio9VigBovAA;
+  };
+
+  let espesor = '';
+  if(claro === "3"){
+    espesor = '14';
+  } else if(claro === "3.5"){
+    espesor = '15';
+  } else if(claro === "4"){
+    espesor = '16';
+  } else if(claro === "4.5"){
+    espesor = '18';
+  } else if(claro === "5"){
+    espesor = '20';
   }
 
-  if(!data || vigBovAA.length === 0 || vigBovPretensada.length == 0 || losasolida.length == 0 || losaligerada.length == 0){
+  if(!area){
     return(
       <div>
         CARGANDO
@@ -97,7 +110,7 @@ function Resultados() {
           <h2>LOSAS PARA VIVIENDA</h2>
           <h3>LOSAS EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
-          <h2 className="naranja">RESULTADOS {area}</h2>
+          <h2 className="naranja">RESULTADOS</h2>
         </div>
         <div className="datos">
           <div>
@@ -132,7 +145,7 @@ function Resultados() {
           <div>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              PRECIO DEL CONCRETO: $
+              PRECIO DEL CONCRETO:$
               <input type="number" step="10" placeholder={pconcreto} onChange={(e) => setPconcreto(e.target.value)} className="tectron" />
             </h2>
             <h2 className="flexter">
@@ -151,12 +164,13 @@ function Resultados() {
           <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
-            espesor={vigBovAA[0].espesor}
+            espesor={espesor}
             costo={(costoTVigBovAA * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoTVigBovAA * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
             ejecucion={((area / 32) + 5.3 + 0.6 + 0.8).toFixed(1)}
           />
+          {/* 
           <Datos 
             bkg="dos"
             titulo="VIG-BOV Pretensada"
@@ -166,8 +180,10 @@ function Resultados() {
             cimbrado={area / 32}
             ejecucion="5.2"
           />
+          */}
         </div>
         <div className="layt dos">
+          {/* 
           <Datos 
             bkg="tres"
             titulo="LOSA SÓLIDA Y VAR. G42"
@@ -177,6 +193,7 @@ function Resultados() {
             cimbrado={area / 9.6}
             ejecucion="8.1"
           />
+          
           <Datos 
             bkg="cuatro"
             titulo="LOSA ALIGERADA Y VAR. G42"
@@ -186,6 +203,7 @@ function Resultados() {
             cimbrado={area / 9.6}
             ejecucion="6.6"
           />
+          */}
         </div>
         <div className="layt tres">
           <Link href="/deacero/formulario">
