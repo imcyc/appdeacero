@@ -7,14 +7,13 @@ import Datos from '../components/datos';
 import data from '../components/data.json';
 //import { getWhyNextReasons } from "../../lib/api";
 
-
 function Resultados() {
-  const [area, setArea] = useState(localStorage.getItem('area'));
-  const [destino, setDestino] = useState(localStorage.getItem('destino'));
-  const [claro, setClaro] = useState(localStorage.getItem('claro'));
-  const [pconcreto, setPconcreto] = useState(localStorage.getItem('pconcreto'));
-  const [pmalla, setPmalla] = useState(localStorage.getItem('pmalla'));
-  const [pvar, setPvar] = useState(localStorage.getItem('pvar'));
+  const [area, setArea] = useState('');
+  const [destino, setDestino] = useState('');
+  const [claro, setClaro] = useState('');
+  const [pconcreto, setPconcreto] = useState('');
+  const [pmalla, setPmalla] = useState('');
+  const [pvar, setPvar] = useState('');
 
   const [vigBovAA, setVigBovAA] = useState([]);
   const [vigBovPretensada, setVigBovPretensada] = useState([]);
@@ -22,12 +21,18 @@ function Resultados() {
   const [losaligerada, setLosaaligerada] = useState([]);
 
   useEffect(() => {
+    setArea(localStorage.getItem('area'));
+    setDestino(localStorage.getItem('destino'));
+    setClaro(localStorage.getItem('claro'));
+    setPconcreto(localStorage.getItem('pconcreto'));
+    setPmalla(localStorage.getItem('pmalla'));
+    setPvar(localStorage.getItem('pvar'));
     setVigBovAA(data.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino));
     setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
     setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
     setLosaaligerada(data.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino));
 
-  }, [area, destino, claro, pconcreto, pmalla, pvar]);
+  }, []);
 
   function thousands_separators(num)
   {
@@ -80,6 +85,10 @@ function Resultados() {
 
   console.log('viguetas: '+ JSON.stringify(vigBovAA));
 
+  const cambioArea = (e) => {
+    setArea(e.target.value)
+  };
+
   return (
     <Layout>
       <div className="resultados">
@@ -88,15 +97,15 @@ function Resultados() {
           <h2>LOSAS PARA VIVIENDA</h2>
           <h3>LOSAS EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
-          <h2 className="naranja">RESULTADOS</h2>
+          <h2 className="naranja">RESULTADOS {area}</h2>
         </div>
         <div className="datos">
           <div>
-            <h2>
+            <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              ÁREA: <input type="number" step="10" placeholder={area} onChange={(e) => setArea(e.target.value)} className="tectron" /> m<sup>2</sup>
+              ÁREA: <input type="number" step="10" placeholder={area} onChange={cambioArea} className="tectron" /> m<sup>2</sup>
             </h2>
-            <h2>
+            <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               DESTINO: 
               <select onChange={(e) => setDestino(e.target.value)} className="tectron">
@@ -105,7 +114,7 @@ function Resultados() {
                 <option value="Azotea">AZOTEA</option>
               </select>
             </h2>
-            <h2>
+            <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               LONGITUD DE CLARO:
               <select onChange={(e) => setClaro(e.target.value)} className="tectron">
@@ -121,17 +130,17 @@ function Resultados() {
             </h2>
           </div>
           <div>
-            <h2>
+            <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               PRECIO DEL CONCRETO: $
               <input type="number" step="10" placeholder={pconcreto} onChange={(e) => setPconcreto(e.target.value)} className="tectron" />
             </h2>
-            <h2>
+            <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               PRECIO DE LA MALLA SOLDADA: $
               <input type="number" step="10" placeholder={pmalla} onChange={(e) => setPmalla(e.target.value)} className="tectron" />
             </h2>
-            <h2>
+            <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               PRECIO DE LA VARILLA G42: $
               <input type="number" step="10" placeholder={pvar} onChange={(e) => setPvar(e.target.value)} className="tectron" />

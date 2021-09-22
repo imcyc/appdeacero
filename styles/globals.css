@@ -193,6 +193,16 @@ select.tectron {
   border: 1px solid #555;
 }
 
+h2.flexter {
+  display: flex;
+    align-items: center;
+}
+
+h2.flexter input, h2.flexter select {
+  flex: 1;
+  margin-right: 10px;
+}
+
 @media (max-width: 600px) {
   .datos {
     flex-direction: column;
