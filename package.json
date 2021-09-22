@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001258",
     "googleapis": "^85.0.0",
     "marked": "^3.0.2",
     "next": "10.0.7",

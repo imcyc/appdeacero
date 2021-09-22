@@ -76,6 +76,7 @@ function Resultados() {
   };
 
   let precio1VigBovPret = 0.0423*(parseFloat(pconcreto)+202.39)+((170+10)+45.42*1.1018)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
+  let precio0VigBovPret = precio1VigBovPret-0.5*pvar;
 
   let costoTVigBovPret = 0;
 
@@ -112,13 +113,14 @@ function Resultados() {
           <h2>LOSAS PARA VIVIENDA</h2>
           <h3>EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
-          <h2 className="naranja">RESULTADOS {precio1VigBovPret}-{pconcreto}</h2>
+          <h2 className="naranja">RESULTADOS</h2>
+          <h3>{precio0VigBovPret} - {precio1VigBovPret}</h3>
         </div>
         <div className="datos">
           <div>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              ÁREA: <input type="number" step="10" placeholder={area} onChange={cambioArea} className="tectron" /> m<sup>2</sup>
+              ÁREA (m<sup>2</sup>): <input type="number" step="10" placeholder={area} onChange={cambioArea} className="tectron" />
             </h2>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
@@ -131,7 +133,7 @@ function Resultados() {
             </h2>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              LONGITUD DE CLARO:
+              LONGITUD DE CLARO (m):
               <select onChange={(e) => setClaro(e.target.value)} className="tectron">
                 <option value={claro}>{claro}</option>
                 <option value="3">3</option>
@@ -141,7 +143,6 @@ function Resultados() {
                 <option value="5">5</option>
                 <option value="5">5.5</option>
               </select>
-              m
             </h2>
           </div>
           <div>
