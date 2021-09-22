@@ -75,6 +75,10 @@ function Resultados() {
     costoTVigBovAA = precio9VigBovAA;
   };
 
+  let precio1VigBovPret = 0.0423*(2000+202.39)+((170+10)+45.42*79.91)+1.05*(24.82/100+6.26)+1.41*(11.33+0)+(0+28.22);
+
+  let costoTVigBovPret = 0;
+
   let espesor = '';
   if(claro === "3"){
     espesor = '14';
@@ -108,7 +112,7 @@ function Resultados() {
           <h2>LOSAS PARA VIVIENDA</h2>
           <h3>LOSAS EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
-          <h2 className="naranja">RESULTADOS</h2>
+          <h2 className="naranja">RESULTADOS {precio1VigBovPret}</h2>
         </div>
         <div className="datos">
           <div>
