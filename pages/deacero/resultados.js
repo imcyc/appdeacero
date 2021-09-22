@@ -211,11 +211,6 @@ function Resultados() {
           <h3>EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
-          <h3>{precio2LosaAligerada} - {precio1LosaAligerada}</h3>
-          <h3>{precio4LosaAligerada} - {precio3LosaAligerada}</h3>
-          <h3>{precio6LosaAligerada} - {precio5LosaAligerada}</h3>
-          <h3>{precio8LosaAligerada} - {precio7LosaAligerada}</h3>
-          <h3>{precio10LosaAligerada} - {precio9LosaAligerada}</h3>
         </div>
         <div className="datos">
           <div>
