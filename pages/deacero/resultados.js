@@ -210,7 +210,7 @@ function Resultados() {
           <div>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              PRECIO DEL CONCRETO:$
+              PRECIO DEL CONCRETO: $
               <input type="number" step="10" placeholder={pconcreto} onChange={(e) => setPconcreto(e.target.value)} className="tectron" />
             </h2>
             <h2 className="flexter">
