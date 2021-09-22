@@ -144,6 +144,38 @@ function Resultados() {
   };
 
   let precio1LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+1.509*(15.4+4.03)+0.851*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
+  let precio2LosaAligerada = precio1LosaAligerada-0.5*pvar;
+  let precio3LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+2.55*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
+  let precio4LosaAligerada = precio3LosaAligerada-0.5*pvar;
+  let precio5LosaAligerada = precio3LosaAligerada + 31.97;
+  let precio6LosaAligerada = precio5LosaAligerada-0.5*pvar;
+  let precio7LosaAligerada = precio5LosaAligerada + 31.97;
+  let precio8LosaAligerada = precio7LosaAligerada-0.5*pvar;
+  let precio9LosaAligerada = 14*(9.52+341.05/240)+0.0714*(parseFloat(pconcreto)+202.39)+3.02*(15.4+4.23)+0.85*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
+  let precio10LosaAligerada = precio9LosaAligerada-0.5*pvar;
+
+  let costoLosaAligerada = 0;
+  if(destino === "Azotea" && claro == "3"){
+    costoLosaAligerada = precio2LosaAligerada;
+  } else if(destino === "Entrepiso" && claro == "3"){
+    costoLosaAligerada = precio1LosaAligerada;
+  } else if(destino === "Azotea" && claro == "3.5"){
+    costoLosaAligerada = precio4LosaAligerada;
+  } else if(destino === "Entrepiso" && claro == "3.5"){
+    costoLosaAligerada = precio3LosaAligerada;
+  } else if(destino === "Azotea" && claro == "4"){
+    costoLosaAligerada = precio6LosaAligerada;
+  } else if(destino === "Entrepiso" && claro == "4"){
+    costoLosaAligerada = precio5LosaAligerada;
+  } else if(destino === "Azotea" && claro == "4.5"){
+    costoLosaAligerada = precio8LosaAligerada;
+  } else if(destino === "Entrepiso" && claro == "4.5"){
+    costoLosaAligerada = precio7LosaAligerada;
+  } else if(destino === "Azotea" && claro == "5"){
+    costoLosaAligerada = precio10LosaAligerada;
+  } else if(destino === "Entrepiso" && claro == "5"){
+    costoLosaAligerada = precio9LosaAligerada;
+  };
 
   let espesor = '';
   if(claro === "3"){
@@ -179,7 +211,11 @@ function Resultados() {
           <h3>EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
-          <h3>{precio1LosaAligerada}</h3>
+          <h3>{precio2LosaAligerada} - {precio1LosaAligerada}</h3>
+          <h3>{precio4LosaAligerada} - {precio3LosaAligerada}</h3>
+          <h3>{precio6LosaAligerada} - {precio5LosaAligerada}</h3>
+          <h3>{precio8LosaAligerada} - {precio7LosaAligerada}</h3>
+          <h3>{precio10LosaAligerada} - {precio9LosaAligerada}</h3>
         </div>
         <div className="datos">
           <div>
@@ -261,28 +297,16 @@ function Resultados() {
             ejecucion={((area / 9.6) + 1.6 + 1.3).toFixed(1)}
           />
         </div>
-        <div className="layt dos">
-          {/* 
+        <div className="layt">
           <Datos 
-            bkg="tres"
-            titulo="LOSA SÓLIDA Y VAR. G42"
-            espesor={losasolida[0].espesor}
-            costo={losasolida[0].precio * 1.2}
-            costoTotal={thousands_separators(((losasolida[0].precio * 1.2) * area).toFixed(2))}
-            cimbrado={area / 9.6}
-            ejecucion="8.1"
-          />
-          
-          <Datos 
-            bkg="cuatro"
+            bkg="dos"
             titulo="LOSA ALIGERADA Y VAR. G42"
-            espesor={losaligerada[0].espesor}
-            costo={thousands_separators((losaligerada[0].precio * 1.2).toFixed(2))}
-            costoTotal={thousands_separators(((losaligerada[0].precio * 1.2) * area).toFixed(2))}
-            cimbrado={area / 9.6}
-            ejecucion="6.6"
+            clarox={claro}
+            costo={(costoLosaAligerada * 1.2).toFixed(2)}
+            costoTotal={thousands_separators(((costoLosaAligerada * 1.2) * area).toFixed(2))}
+            cimbrado={(area / 9.6).toFixed(1)}
+            ejecucion={((area / 9.6) + 0.8 + 0.6).toFixed(1)}
           />
-          */}
         </div>
         <div className="layt tres">
           <Link href="/deacero/formulario">

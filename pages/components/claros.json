@@ -73,5 +73,30 @@
     "seccion":"LOSA SÓLIDA Y VAR. G42",
     "claro": "5",
     "espesor": "17"
+  },
+  {
+    "seccion":"LOSA ALIGERADA Y VAR. G42",
+    "claro": "3",
+    "espesor": "14"
+  },
+  {
+    "seccion":"LOSA ALIGERADA Y VAR. G42",
+    "claro": "3.5",
+    "espesor": "14"
+  },
+  {
+    "seccion":"LOSA ALIGERADA Y VAR. G42",
+    "claro": "4",
+    "espesor": "16"
+  },
+  {
+    "seccion":"LOSA ALIGERADA Y VAR. G42",
+    "claro": "4.5",
+    "espesor": "18"
+  },
+  {
+    "seccion":"LOSA ALIGERADA Y VAR. G42",
+    "claro": "5",
+    "espesor": "20"
   }
 ]
