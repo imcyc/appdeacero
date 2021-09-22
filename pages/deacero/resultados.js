@@ -9,12 +9,12 @@ import data from '../components/data.json';
 
 
 function Resultados() {
-  const [area, setArea] = useState(0);
-  const [destino, setDestino] = useState(0);
-  const [claro, setClaro] = useState(0);
-  const [pconcreto, setPconcreto] = useState(0);
-  const [pmalla, setPmalla] = useState(0);
-  const [pvar, setPvar] = useState(0);
+  const [area, setArea] = useState(localStorage.getItem('area'));
+  const [destino, setDestino] = useState(localStorage.getItem('destino'));
+  const [claro, setClaro] = useState(localStorage.getItem('claro'));
+  const [pconcreto, setPconcreto] = useState(localStorage.getItem('pconcreto'));
+  const [pmalla, setPmalla] = useState(localStorage.getItem('pmalla'));
+  const [pvar, setPvar] = useState(localStorage.getItem('pvar'));
 
   const [vigBovAA, setVigBovAA] = useState([]);
   const [vigBovPretensada, setVigBovPretensada] = useState([]);
@@ -22,13 +22,6 @@ function Resultados() {
   const [losaligerada, setLosaaligerada] = useState([]);
 
   useEffect(() => {
-    setArea(localStorage.getItem('area'));
-    setDestino(localStorage.getItem('destino'));
-    setClaro(localStorage.getItem('claro'));
-    setPconcreto(localStorage.getItem('pconcreto'));
-    setPmalla(localStorage.getItem('pmalla'));
-    setPvar(localStorage.getItem('pvar'));
-
     setVigBovAA(data.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino));
     setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
     setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
@@ -96,22 +89,53 @@ function Resultados() {
           <h3>LOSAS EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
-          <h3>{precio0VigBovAA.toFixed(2)} - {precio1VigBovAA.toFixed(2)}</h3>
-          <h3>{precio2VigBovAA.toFixed(2)} - {precio3VigBovAA.toFixed(2)}</h3>
-          <h3>{precio4VigBovAA.toFixed(2)} - {precio5VigBovAA.toFixed(2)}</h3>
-          <h3>{precio6VigBovAA.toFixed(2)} - {precio7VigBovAA.toFixed(2)}</h3>
-          <h3>{precio8VigBovAA.toFixed(2)} - {precio9VigBovAA.toFixed(2)}</h3>
         </div>
         <div className="datos">
           <div>
-            <h2><span className="lnr lnr-chevron-right"></span> ÁREA: {area} mt<sup>2</sup></h2>
-            <h2><span className="lnr lnr-chevron-right"></span> DESTINO: {destino}</h2>
-            <h2><span className="lnr lnr-chevron-right"></span> LONGITUD DE CLARO: {claro} mt.</h2>
+            <h2>
+              <span className="lnr lnr-chevron-right"></span> 
+              ÁREA: <input type="number" step="10" placeholder={area} onChange={(e) => setArea(e.target.value)} className="tectron" /> m<sup>2</sup>
+            </h2>
+            <h2>
+              <span className="lnr lnr-chevron-right"></span> 
+              DESTINO: 
+              <select onChange={(e) => setDestino(e.target.value)} className="tectron">
+                <option value={destino}>{destino}</option>
+                <option value="Entrepiso">ENTREPISO</option>
+                <option value="Azotea">AZOTEA</option>
+              </select>
+            </h2>
+            <h2>
+              <span className="lnr lnr-chevron-right"></span> 
+              LONGITUD DE CLARO:
+              <select onChange={(e) => setClaro(e.target.value)} className="tectron">
+                <option value={claro}>{claro}</option>
+                <option value="3">3</option>
+                <option value="3.5">3.5</option>
+                <option value="4">4</option>
+                <option value="4.5">4.5</option>
+                <option value="5">5</option>
+                <option value="5">5.5</option>
+              </select>
+              m
+            </h2>
           </div>
           <div>
-            <h2><span className="lnr lnr-chevron-right"></span> PRECIO DEL CONCRETO: $ {thousands_separators(pconcreto)}</h2>
-            <h2><span className="lnr lnr-chevron-right"></span> PRECIO DE LA MALLA SOLDADA: $ {thousands_separators(pmalla)}</h2>
-            <h2><span className="lnr lnr-chevron-right"></span> PRECIO DE LA VARILLA G42: $ {thousands_separators(pvar)}</h2>
+            <h2>
+              <span className="lnr lnr-chevron-right"></span> 
+              PRECIO DEL CONCRETO: $
+              <input type="number" step="10" placeholder={pconcreto} onChange={(e) => setPconcreto(e.target.value)} className="tectron" />
+            </h2>
+            <h2>
+              <span className="lnr lnr-chevron-right"></span> 
+              PRECIO DE LA MALLA SOLDADA: $
+              <input type="number" step="10" placeholder={pmalla} onChange={(e) => setPmalla(e.target.value)} className="tectron" />
+            </h2>
+            <h2>
+              <span className="lnr lnr-chevron-right"></span> 
+              PRECIO DE LA VARILLA G42: $
+              <input type="number" step="10" placeholder={pvar} onChange={(e) => setPvar(e.target.value)} className="tectron" />
+            </h2>
           </div>
         </div>
         <div className="layt">
@@ -120,9 +144,9 @@ function Resultados() {
             titulo="VIG-BOV Alma Abierta"
             espesor={vigBovAA[0].espesor}
             costo={(costoTVigBovAA * 1.2).toFixed(2)}
-            costoTotal={thousands_separators(((vigBovAA[0].costoTVigBovAA * 1.2) * area).toFixed(2))}
-            cimbrado={(area / 32).toFixed(2)}
-            ejecucion={((area / 32) + 2.6 + 0.3 + 0.4).toFixed(2)}
+            costoTotal={thousands_separators(((costoTVigBovAA * 1.2) * area).toFixed(2))}
+            cimbrado={(area / 32).toFixed(1)}
+            ejecucion={((area / 32) + 5.3 + 0.6 + 0.8).toFixed(1)}
           />
           <Datos 
             bkg="dos"
