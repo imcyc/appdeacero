@@ -203,6 +203,21 @@ h2.flexter input, h2.flexter select {
   margin-right: 10px;
 }
 
+.tarjeta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tarjeta div:nth-child(1){
+  flex: 1;
+}
+
+.tarjeta div:nth-child(0){
+  flex: 0;
+  box-shadow: none !important;
+}
+
 @media (max-width: 600px) {
   .datos {
     flex-direction: column;

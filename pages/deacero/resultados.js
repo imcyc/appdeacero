@@ -268,9 +268,8 @@ function Resultados() {
             costoTotal={thousands_separators(((costoTVigBovAA * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
             ejecucion={((area / 32) + 2.6 + 0.3 + 0.4).toFixed(1)}
+            imagen="1"
           />
-        </div>
-        <div className="layt">
           <Datos 
             bkg="dos"
             titulo="VIG-BOV Pretensada"
@@ -279,6 +278,7 @@ function Resultados() {
             costoTotal={thousands_separators(((costoTVigBovPret * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
             ejecucion={((area / 32) + 2.9 + 0.3 + 0.5).toFixed(1)}
+            imagen="2"
           />
         </div>
         <div className="layt">
@@ -290,9 +290,8 @@ function Resultados() {
             costoTotal={thousands_separators(((costoLosaSolida * 1.2) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
             ejecucion={((area / 9.6) + 1.6 + 1.3).toFixed(1)}
+            imagen="3"
           />
-        </div>
-        <div className="layt">
           <Datos 
             bkg="dos"
             titulo="LOSA ALIGERADA Y VAR. G42"
@@ -301,6 +300,7 @@ function Resultados() {
             costoTotal={thousands_separators(((costoLosaAligerada * 1.2) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
             ejecucion={((area / 9.6) + 0.8 + 0.6).toFixed(1)}
+            imagen="4"
           />
         </div>
         <div className="layt tres">
