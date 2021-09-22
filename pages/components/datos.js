@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import losClaros from '../components/claros.json';
 
-function Datos({titulo, espesor, costo, costoTotal, cimbrado, ejecucion}) {
+function Datos({titulo, clarox, costo, costoTotal, cimbrado, ejecucion}) {
+
+  const elclarin = losClaros.filter((item) => item.seccion === titulo && item.claro === clarox).map(esp => esp.espesor);
+
   return (
     <div>
       <div>
@@ -8,7 +12,7 @@ function Datos({titulo, espesor, costo, costoTotal, cimbrado, ejecucion}) {
         <hr />
         <div className="datos">
           <p className="esp"><span className="lnr lnr-arrow-right"></span> ESPESOR LOSA:</p>
-          <p>{espesor} cm</p>
+          <p>{elclarin} cm</p>
         </div>
         <div className="datos">
           <p className="esp"><span className="lnr lnr-arrow-right"></span> COSTO:</p>

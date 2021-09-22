@@ -109,6 +109,39 @@ function Resultados() {
     costoTVigBovPret = precio8VigBovPret;
   };
 
+  let precio1LosaSolida = 0.105*(parseFloat(pconcreto)+202.39)+4.27*(15.4+4.23)+(4.27*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio2LosaSolida = precio1LosaSolida-0.5*pvar;
+  let precio3LosaSolida = 0.126*(parseFloat(pconcreto)+202.39)+5.12*(15.4+4.23)+(5.12*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio4LosaSolida = precio3LosaSolida-0.5*pvar;
+  let precio5LosaSolida = 0.1412*(parseFloat(pconcreto)+202.39)+5.97*(15.4+4.23)+(5.97*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio6LosaSolida = precio5LosaSolida-0.5*pvar;
+  let precio7LosaSolida = 0.1575*(parseFloat(pconcreto)+202.39)+6.82*(15.4+4.23)+(6.82*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio8LosaSolida = precio7LosaSolida-0.5*pvar;
+  let precio9LosaSolida = 0.1785*(parseFloat(pconcreto)+202.39)+7.68*(15.4+4.23)+(7.68*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio10LosaSolida = precio9LosaSolida-0.5*pvar;
+  
+  let costoLosaSolida = 0;
+  if(destino === "Azotea" && claro == "3"){
+    costoLosaSolida = precio2LosaSolida;
+  } else if(destino === "Entrepiso" && claro == "3"){
+    costoLosaSolida = precio1LosaSolida;
+  } else if(destino === "Azotea" && claro == "3.5"){
+    costoLosaSolida = precio4LosaSolida;
+  } else if(destino === "Entrepiso" && claro == "3.5"){
+    costoLosaSolida = precio3LosaSolida;
+  } else if(destino === "Azotea" && claro == "4"){
+    costoLosaSolida = precio6LosaSolida;
+  } else if(destino === "Entrepiso" && claro == "4"){
+    costoLosaSolida = precio5LosaSolida;
+  } else if(destino === "Azotea" && claro == "4.5"){
+    costoLosaSolida = precio8LosaSolida;
+  } else if(destino === "Entrepiso" && claro == "4.5"){
+    costoLosaSolida = precio7LosaSolida;
+  } else if(destino === "Azotea" && claro == "5"){
+    costoLosaSolida = precio10LosaSolida;
+  } else if(destino === "Entrepiso" && claro == "5"){
+    costoLosaSolida = precio9LosaSolida;
+  };
 
   let espesor = '';
   if(claro === "3"){
@@ -118,7 +151,7 @@ function Resultados() {
   } else if(claro === "4"){
     espesor = '16';
   } else if(claro === "4.5"){
-    espesor = '18';
+    espesor = '15';
   } else if(claro === "5"){
     espesor = '20';
   }
@@ -196,7 +229,7 @@ function Resultados() {
           <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
-            espesor={espesor}
+            clarox={claro}
             costo={(costoTVigBovAA * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoTVigBovAA * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
@@ -207,11 +240,22 @@ function Resultados() {
           <Datos 
             bkg="dos"
             titulo="VIG-BOV Pretensada"
-            espesor={espesor}
+            clarox={claro}
             costo={(costoTVigBovPret * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoTVigBovPret * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
             ejecucion={((area / 32) + 2.9 + 0.3 + 0.5).toFixed(1)}
+          />
+        </div>
+        <div className="layt">
+          <Datos 
+            bkg="dos"
+            titulo="LOSA SÓLIDA Y VAR. G42"
+            clarox={claro}
+            costo={(costoLosaSolida * 1.2).toFixed(2)}
+            costoTotal={thousands_separators(((costoLosaSolida * 1.2) * area).toFixed(2))}
+            cimbrado={(area / 9.6).toFixed(1)}
+            ejecucion={((area / 9.6) + 1.6 + 1.3).toFixed(1)}
           />
         </div>
         <div className="layt dos">

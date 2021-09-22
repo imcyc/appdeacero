@@ -1,0 +1,77 @@
+[
+  {
+    "seccion":"VIG-BOV Alma Abierta",
+    "claro": "3",
+    "espesor": "14"
+  },
+  {
+    "seccion":"VIG-BOV Alma Abierta",
+    "claro": "3.5",
+    "espesor": "15"
+  },
+  {
+    "seccion":"VIG-BOV Alma Abierta",
+    "claro": "4",
+    "espesor": "16"
+  },
+  {
+    "seccion":"VIG-BOV Alma Abierta",
+    "claro": "4.5",
+    "espesor": "18"
+  },
+  {
+    "seccion":"VIG-BOV Alma Abierta",
+    "claro": "5",
+    "espesor": "20"
+  },
+  {
+    "seccion":"VIG-BOV Pretensada",
+    "claro": "3",
+    "espesor": "14"
+  },
+  {
+    "seccion":"VIG-BOV Pretensada",
+    "claro": "3.5",
+    "espesor": "15"
+  },
+  {
+    "seccion":"VIG-BOV Pretensada",
+    "claro": "4",
+    "espesor": "16"
+  },
+  {
+    "seccion":"VIG-BOV Pretensada",
+    "claro": "4.5",
+    "espesor": "18"
+  },
+  {
+    "seccion":"VIG-BOV Pretensada",
+    "claro": "5",
+    "espesor": "20"
+  },
+  {
+    "seccion":"LOSA SÓLIDA Y VAR. G42",
+    "claro": "3",
+    "espesor": "10"
+  },
+  {
+    "seccion":"LOSA SÓLIDA Y VAR. G42",
+    "claro": "3.5",
+    "espesor": "12"
+  },
+  {
+    "seccion":"LOSA SÓLIDA Y VAR. G42",
+    "claro": "4",
+    "espesor": "13.5"
+  },
+  {
+    "seccion":"LOSA SÓLIDA Y VAR. G42",
+    "claro": "4.5",
+    "espesor": "15"
+  },
+  {
+    "seccion":"LOSA SÓLIDA Y VAR. G42",
+    "claro": "5",
+    "espesor": "17"
+  }
+]
