@@ -31,7 +31,6 @@ function Resultados() {
     setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
     setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
     setLosaaligerada(data.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino));
-
   }, []);
 
   function thousands_separators(num)
@@ -199,8 +198,34 @@ function Resultados() {
   };
 
   const cambioArea = (e) => {
-    setArea(e.target.value)
+    setArea(e.target.value);
+    localStorage.setItem('area', e.target.value);
   };
+
+  const cambioDestino = (e) => {
+    setDestino(e.target.value);
+    localStorage.setItem('destino', e.target.value);
+  };
+
+  const cambioClaro = (e) => {
+    setClaro(e.target.value);
+    localStorage.setItem('claro', e.target.value);
+  };
+
+  const cambioPrecio = (e) => {
+    setPconcreto(e.target.value);
+    localStorage.setItem('pconcreto', e.target.value);
+  };
+
+  const cambioPrecioMalla = (e) => {
+    setPmalla(e.target.value);
+    localStorage.setItem('pmalla', e.target.value);
+  }
+
+  const cambioPrecioVarilla = (e) => {
+    setPvar(e.target.value)
+    localStorage.setItem('pvar', e.target.value);
+  }
 
   return (
     <Layout>
@@ -211,6 +236,7 @@ function Resultados() {
           <h3>EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
+          <h3>{precio1LosaAligerada}</h3>
         </div>
         <div className="datos">
           <div>
@@ -221,7 +247,7 @@ function Resultados() {
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               DESTINO: 
-              <select onChange={(e) => setDestino(e.target.value)} className="tectron">
+              <select onChange={cambioDestino} className="tectron">
                 <option value={destino}>{destino}</option>
                 <option value="Entrepiso">ENTREPISO</option>
                 <option value="Azotea">AZOTEA</option>
@@ -230,7 +256,7 @@ function Resultados() {
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               LONGITUD DE CLARO (m):
-              <select onChange={(e) => setClaro(e.target.value)} className="tectron">
+              <select onChange={cambioClaro} className="tectron">
                 <option value={claro}>{claro}</option>
                 <option value="3">3</option>
                 <option value="3.5">3.5</option>
@@ -245,17 +271,17 @@ function Resultados() {
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               PRECIO DEL CONCRETO: $
-              <input type="number" step="10" placeholder={pconcreto} onChange={(e) => setPconcreto(e.target.value)} className="tectron" />
+              <input type="number" step="10" placeholder={pconcreto} onChange={cambioPrecio} className="tectron" />
             </h2>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               PRECIO DE LA MALLA SOLDADA: $
-              <input type="number" step="10" placeholder={pmalla} onChange={(e) => setPmalla(e.target.value)} className="tectron" />
+              <input type="number" step="10" placeholder={pmalla} onChange={cambioPrecioMalla} className="tectron" />
             </h2>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
               PRECIO DE LA VARILLA G42: $
-              <input type="number" step="10" placeholder={pvar} onChange={(e) => setPvar(e.target.value)} className="tectron" />
+              <input type="number" step="10" placeholder={pvar} onChange={cambioPrecioVarilla} className="tectron" />
             </h2>
           </div>
         </div>
