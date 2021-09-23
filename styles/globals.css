@@ -26,6 +26,7 @@ footer {
   background: rgba(0,0,0,0.8);
   padding: 7px;
   box-shadow: 0 0 10px #000;
+  border-top: 3px solid #ff5001;
 }
 
 footer p {
