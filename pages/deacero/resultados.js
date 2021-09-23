@@ -236,7 +236,6 @@ function Resultados() {
           <h3>EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h3>
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
-          <h3>{precio1LosaAligerada}</h3>
         </div>
         <div className="datos">
           <div>

@@ -80,7 +80,6 @@ footer p {
   background: #ff5001;
   padding: 10px 90px;
   box-shadow: 0 0 10px #444;
-  border-bottom: 5px solid;
 }
 
 .datos div {
@@ -114,7 +113,6 @@ footer p {
   margin: 2px;
   background: #fff;
   padding: 10px;
-  box-shadow: 0 0 5px #777;
 }
 
 .layt div h2 {
@@ -216,6 +214,14 @@ h2.flexter input, h2.flexter select {
 .tarjeta div:nth-child(0){
   flex: 0;
   box-shadow: none !important;
+}
+
+.lnr.lnr-arrow-right.flecha {
+  width: 30px;
+  height: 30px;
+  background: #111;
+  color: #fff;
+  padding: 5px;
 }
 
 @media (max-width: 600px) {
