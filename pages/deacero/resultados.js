@@ -87,9 +87,9 @@ function Resultados() {
 
   let costoTVigBovPret = 0;
   if(destino === "Azotea" && claro == "3"){
-    costoTVigBovPret = precio1VigBovPret;
-  } else if(destino === "Entrepiso" && claro == "3"){
     costoTVigBovPret = precio0VigBovPret;
+  } else if(destino === "Entrepiso" && claro == "3"){
+    costoTVigBovPret = precio1VigBovPret;
   } else if(destino === "Azotea" && claro == "3.5"){
     costoTVigBovPret = precio3VigBovPret;
   } else if(destino === "Entrepiso" && claro == "3.5"){
