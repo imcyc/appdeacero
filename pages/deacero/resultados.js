@@ -50,7 +50,6 @@ function Resultados() {
   let precio6VigBovAA = precio7VigBovAA-0.5*pvar;
   let precio9VigBovAA = 0.0575*(parseFloat(pconcreto)+202.39)+(256.25+45.42)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
   let precio8VigBovAA = precio9VigBovAA-0.5*pvar;
-
   let costoTVigBovAA = 0;
   if(destino === "Azotea" && claro == "3"){
     costoTVigBovAA = precio0VigBovAA;
