@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import Layout from '../../../components/Layout';
 import { TiArrowRight } from 'react-icons/ti';
+import styles from '../../../../styles/Mapei.module.css'
 
 function Datos() {
-  return(
-      <div className='acccadmin'>
-        <img src="/logo-deacero.svg" alt="Calculadoras para la construcción - Instituto Mexicano del Cemento y del Concreto A.C" style={{width: '300px'}} />
-        <hr/>
-        <h2><TiArrowRight/> Administración de datos de calculadora de Losas para Vivienda</h2>
+  return (
+    <div className='acccadmin'>
+      <form>
+        <img src="/logo-deacero.svg" alt="Calculadoras para la construcción - Instituto Mexicano del Cemento y del Concreto A.C" style={{ width: '300px' }} />
+        <hr />
+        <h2><TiArrowRight /> Administración de datos de calculadora de Losas para Vivienda</h2>
         <h4>Por favor ingresar los siguientes datos:</h4>
-        <hr/>
+        <hr />
         <div className='acct'>
           <h3><TiArrowRight /> INGRESAR EL FACTOR GLOBAL DE COSTOS:</h3>
           <input type="number" name="factorcostos" className="mb-0" />
-          <h2>Vig-Bov. A.A.</h2>
+          <hr/>
+          <h2><TiArrowRight /> Vig-Bov. A.A.</h2>
+          <hr/>
           <h4>Cimbrado (m²/JOR):</h4>
           <input type="number" name="factorcostos" className="mb-0" />
           <h4>Colocación VIG A.A. (m²/JOR):</h4>
@@ -57,8 +61,31 @@ function Datos() {
           <input type="number" name="factorcostos" className="mb-0" />
           <h4>EN ESTR. P/TEMP. EN LOSAS HAB. Y COL. DE M.S. 66-1010:</h4>
           <input type="number" name="factorcostos" className="mb-0" />
+          <hr/>
+          <h2><TiArrowRight /> Vig-Bov. Pretensada</h2>
+          <hr/>
+          <h4>Cimbrado (m²/JOR):</h4>
+          <input type="number" name="factorcostos" className="mb-0" />
+          <h4>Colocación VIG Pret. (m²/JOR):</h4>
+          <input type="number" name="factorcostos" className="mb-0" />
+          <h4>Colocación M.S. 66-1010 (m²/JOR):</h4>
+          <input type="number" name="factorcostos" className="mb-0" />
+          <hr/>
+          <h2><TiArrowRight /> Losa Sólida</h2>
+          <hr/>
+          <h4>Cimbrado (m²/JOR):</h4>
+          <input type="number" name="factorcostos" className="mb-0" />
+          <hr/>
+          <h2><TiArrowRight /> Losa Aligerada</h2>
+          <hr/>
+          <h4>Cimbrado (m²/JOR):</h4>
+          <input type="number" name="factorcostos" className="mb-0" />
+          <h4>SAL. REAL INT. Ayudante:</h4>
+          <input type="number" name="factorcostos" className="mb-0" />
+          <button type="submit" className={styles.calcular}>INGRESAR</button>
         </div>
-      </div>
+      </form>
+    </div>
   )
 }
 

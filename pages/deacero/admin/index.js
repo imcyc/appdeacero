@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { TiArrowRight } from 'react-icons/ti';
-import styles from '../../../styles/Mapei.module.css'
+import styles from '../../../styles/Mapei.module.css';
 
 function Admin() {
 
