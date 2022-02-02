@@ -22,7 +22,7 @@ function Admin() {
       <form onSubmit={datos}>
         <img src="/logo-deacero.svg" alt="Calculadoras para la construcción - Instituto Mexicano del Cemento y del Concreto A.C" style={{width: '300px'}} />
         <hr/>
-        <h2>ADMINISTRADOR</h2>
+        <h2>ADMINISTRADOR DE DATOS</h2>
         <hr/>
         <h3><TiArrowRight /> NOMBRE DE USUARIO:</h3>
         <input type="text" name="nombre" placeholder="Ingresar tu nombre de usuario" />

@@ -226,12 +226,18 @@ h2.flexter input, h2.flexter select {
 }
 
 .acccadmin {
-  padding: 20px 90px;
+  padding: 20px 180px;
 }
 
 .acccadmin input {
   width: 100%;
   padding: 10px;
+}
+
+.acccadmin h2 {
+  background: #FF5001;
+  padding: 10px;
+  color: #fff;
 }
 
 @media (max-width: 600px) {
