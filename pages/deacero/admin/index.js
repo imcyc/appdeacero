@@ -4,7 +4,6 @@ import { TiArrowRight } from 'react-icons/ti';
 import styles from '../../../styles/Mapei.module.css';
 
 function Admin() {
-
   const router = useRouter();
 
   const datos = (e) => {
@@ -16,7 +15,6 @@ function Admin() {
       query: { pid: usuario },
     });
   };
-
   return(
     <div className={styles.admindeacero}>
       <form onSubmit={datos}>
@@ -33,5 +31,4 @@ function Admin() {
     </div>
   )
 }
-
 export default Admin;
