@@ -27,7 +27,7 @@ function Resultados() {
     setPconcreto(localStorage.getItem('pconcreto'));
     setPmalla(localStorage.getItem('pmalla'));
     setPvar(localStorage.getItem('pvar'));
-    
+
     setVigBovAA(data.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino));
     setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
     setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
@@ -50,8 +50,10 @@ function Resultados() {
   let precio7VigBovAA = 0.0467*(parseFloat(pconcreto)+202.39)+(240+45.42)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
   let precio6VigBovAA = precio7VigBovAA-0.5*pvar;
   let precio9VigBovAA = 0.0575*(parseFloat(pconcreto)+202.39)+(256.25+45.42)+1.05*(parseFloat(pmalla * 100)/100+6.26)+1.41*(11.33+0)+(0+28.22);
+
   let precio8VigBovAA = precio9VigBovAA-0.5*pvar;
   let costoTVigBovAA = 0;
+
   if(destino === "Azotea" && claro == "3"){
     costoTVigBovAA = precio0VigBovAA;
   } else if(destino === "Entrepiso" && claro == "3"){
@@ -262,7 +264,6 @@ function Resultados() {
                 <option value="4">4</option>
                 <option value="4.5">4.5</option>
                 <option value="5">5</option>
-                <option value="5">5.5</option>
               </select>
             </h2>
           </div>
