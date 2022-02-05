@@ -7,7 +7,7 @@ import Datos from '../components/datos';
 import data from '../components/data.json';
 //import { getWhyNextReasons } from "../../lib/api";
 
-function Resultados() {
+function Resultados22() {
   const [area, setArea] = useState('');
   const [destino, setDestino] = useState('');
   const [claro, setClaro] = useState('');
@@ -27,7 +27,6 @@ function Resultados() {
     setPconcreto(localStorage.getItem('pconcreto'));
     setPmalla(localStorage.getItem('pmalla'));
     setPvar(localStorage.getItem('pvar'));
-    
     setVigBovAA(data.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino));
     setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
     setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
@@ -339,4 +338,4 @@ function Resultados() {
   )
 };
 
-export default Resultados;
+export default Resultados22;

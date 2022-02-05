@@ -10,10 +10,15 @@ function Admin() {
     e.preventDefault();
     let usuario = e.target.nombre.value;
     console.log('los datos');
-    router.push({
-      pathname: "/deacero/admin/datos/",
-      query: { pid: usuario },
-    });
+    if(usuario === "admin"){
+      router.push({
+        pathname: "/deacero/admin/datos/",
+        query: { pid: usuario },
+      });
+    } else {
+      alert('Nombre de usuario incorrecto');
+    }
+    
   };
   return(
     <div className={styles.admindeacero}>

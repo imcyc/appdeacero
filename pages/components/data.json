@@ -4,279 +4,339 @@
     "longitud": 3,
     "destino": "Azotea",
     "espesor": 14,
-    "precio": 366.65
+    "precio": 366.65,
+    "concreto": 0.0462
   },
   {
     "tipo": "VigBovAA",
     "longitud": 3,
     "destino": "Entrepiso",
     "espesor": 14,
-    "precio": 374.35
+    "precio": 374.35,
+    "concreto": 0.0462
   },
   {
     "tipo": "VigBovAA",
     "longitud": 3.5,
     "destino": "Azotea",
     "espesor": 15,
-    "precio": 380.16
+    "precio": 380.16,
+    "concreto": 0.0537
   },
   {
     "tipo": "VigBovAA",
     "longitud": 3.5,
     "destino": "Entrepiso",
     "espesor": 15,
-    "precio": 387.86
+    "precio": 387.86,
+    "concreto": 0.0537
   },
   {
     "tipo": "VigBovAA",
     "longitud": 4,
     "destino": "Azotea",
     "espesor": 16,
-    "precio": 399.84
+    "precio": 399.84,
+    "concreto": 0.0452
   },
   {
     "tipo": "VigBovAA",
     "longitud": 4,
     "destino": "Entrepiso",
     "espesor": 16,
-    "precio": 407.54
+    "precio": 407.54,
+    "concreto": 0.0452
   },
   {
     "tipo": "VigBovAA",
     "longitud": 4.5,
     "destino": "Azotea",
     "espesor": 18,
-    "precio": 437.55
+    "precio": 437.55,
+    "concreto": 0.0467
   },
   {
     "tipo": "VigBovAA",
     "longitud": 4.5,
     "destino": "Entrepiso",
     "espesor": 18,
-    "precio": 445.25
+    "precio": 445.25,
+    "concreto": 0.0467
   },
   {
     "tipo": "VigBovAA",
     "longitud": 5,
     "destino": "Azotea",
     "espesor": 20,
-    "precio": 473.26
+    "precio": 473.26,
+    "concreto": 0.0575
   },
   {
     "tipo": "VigBovAA",
     "longitud": 5,
     "destino": "Entrepiso",
     "espesor": 20,
-    "precio": 480.96
+    "precio": 480.96,
+    "concreto": 0.0575
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 3,
     "destino": "Azotea",
     "espesor": 14,
-    "precio": 374.24
+    "precio": 374.24,
+    "concreto": 0.0423
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 3,
     "destino": "Entrepiso",
     "espesor": 14,
-    "precio": 381.94
+    "precio": 381.94,
+    "concreto": 0.0423
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 3.5,
     "destino": "Azotea",
     "espesor": 15,
-    "precio": 392.27
+    "precio": 392.27,
+    "concreto": 0.0523
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 3.5,
     "destino": "Entrepiso",
     "espesor": 15,
-    "precio": 399.97
+    "precio": 399.97,
+    "concreto": 0.0523
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 4,
     "destino": "Azotea",
     "espesor": 16,
-    "precio": 420.42
+    "precio": 420.42,
+    "concreto": 0.0485
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 4,
     "destino": "Entrepiso",
     "espesor": 16,
-    "precio": 428.12
+    "precio": 428.12,
+    "concreto": 0.0485
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 4.5,
     "destino": "Azotea",
     "espesor": 18,
-    "precio": 466.59
+    "precio": 466.59,
+    "concreto": 0.0547
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 4.5,
     "destino": "Entrepiso",
     "espesor": 18,
-    "precio": 474.29
+    "precio": 474.29,
+    "concreto": 0.0547
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 5,
     "destino": "Azotea",
     "espesor": 20,
-    "precio": 488.43
+    "precio": 488.43,
+    "concreto": 0.0578
   },
   {
     "tipo": "VigBovPretensada",
     "longitud": 5,
     "destino": "Entrepiso",
     "espesor": 20,
-    "precio": 496.13
+    "precio": 496.13,
+    "concreto": 0.0578
   },
   {
     "tipo": "LosaSolida",
     "longitud": 3,
     "destino": "Azotea",
     "espesor": 10,
-    "precio": 429.94
+    "precio": 429.94,
+    "concreto": 0.105,
+    "rendimiento": 46.83840749
   },
   {
     "tipo": "LosaSolida",
     "longitud": 3,
     "destino": "Entrepiso",
     "espesor": 10,
-    "precio": 437.64
+    "precio": 437.64,
+    "concreto": 0.105,
+    "rendimiento": 46.83840749
   },
   {
     "tipo": "LosaSolida",
     "longitud": 3.5,
     "destino": "Azotea",
     "espesor": 12,
-    "precio": 485.22
+    "precio": 485.22,
+    "concreto": 0.126,
+    "rendimiento": 41.63922229
   },
   {
     "tipo": "LosaSolida",
     "longitud": 3.5,
     "destino": "Entrepiso",
     "espesor": 12,
-    "precio": 492.92
+    "precio": 492.92,
+    "concreto": 0.126,
+    "rendimiento": 41.63922229
   },
   {
     "tipo": "LosaSolida",
     "longitud": 4,
     "destino": "Azotea",
     "espesor": 13.5,
-    "precio": 530.04
+    "precio": 530.04,
+    "concreto": 0.1412,
+    "rendimiento": 36.44003708
   },
   {
     "tipo": "LosaSolida",
     "longitud": 4,
     "destino": "Entrepiso",
     "espesor": 13.5,
-    "precio": 537.74
+    "precio": 537.74,
+    "concreto": 0.1412,
+    "rendimiento": 36.44003708
   },
   {
     "tipo": "LosaSolida",
     "longitud": 4.5,
     "destino": "Azotea",
     "espesor": 15,
-    "precio": 576.84
+    "precio": 576.84,
+    "concreto": 0.1575,
+    "rendimiento": 31.24085187
   },
   {
     "tipo": "LosaSolida",
     "longitud": 4.5,
     "destino": "Entrepiso",
     "espesor": 15,
-    "precio": 584.54
+    "precio": 584.54,
+    "concreto": 0.1575,
+    "rendimiento": 31.24085187
   },
   {
     "tipo": "LosaSolida",
     "longitud": 5,
     "destino": "Azotea",
     "espesor": 17,
-    "precio": 632.33
+    "precio": 632.33,
+    "concreto": 0.1785,
+    "rendimiento": 26.04166667
   },
   {
     "tipo": "LosaSolida",
     "longitud": 5,
     "destino": "Entrepiso",
     "espesor": 17,
-    "precio": 640.03
+    "precio": 640.03,
+    "concreto": 0.1785,
+    "rendimiento": 26.04166667
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 3,
     "destino": "Azotea",
     "espesor": 14,
-    "precio": 442.52
+    "precio": 442.52,
+    "concreto": 0.057,
+    "rendimiento": 84.74576271
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 3,
     "destino": "Entrepiso",
     "espesor": 14,
-    "precio": 450.22
+    "precio": 450.22,
+    "concreto": 0.057,
+    "rendimiento": 84.74576271
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 3.5,
     "destino": "Azotea",
     "espesor": 14,
-    "precio": 446.55
+    "precio": 446.55,
+    "concreto": 0.0606,
+    "rendimiento": 76.47921867
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 3.5,
     "destino": "Entrepiso",
     "espesor": 14,
-    "precio": 454.25
+    "precio": 454.25,
+    "concreto": 0.0606,
+    "rendimiento": 76.47921867
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 4,
     "destino": "Azotea",
     "espesor": 16,
-    "precio": 478.52
+    "precio": 478.52,
+    "concreto": 0.0642,
+    "rendimiento": 68.21267464
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 4,
     "destino": "Entrepiso",
     "espesor": 16,
-    "precio": 486.22
+    "precio": 486.22,
+    "concreto": 0.0642,
+    "rendimiento": 68.21267464
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 4.5,
     "destino": "Azotea",
     "espesor": 18,
-    "precio": 510.49
+    "precio": 510.49,
+    "concreto": 0.0678,
+    "rendimiento": 59.9461306
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 4.5,
     "destino": "Entrepiso",
     "espesor": 18,
-    "precio": 518.19
+    "precio": 518.19,
+    "concreto": 0.0678,
+    "rendimiento": 59.9461306
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 5,
     "destino": "Azotea",
     "espesor": 20,
-    "precio": 542.46
+    "precio": 542.46,
+    "concreto": 0.0714,
+    "rendimiento": 51.67958656
   },
   {
     "tipo": "LosaAligerada",
     "longitud": 5,
     "destino": "Entrepiso",
     "espesor": 20,
-    "precio": 550.16
+    "precio": 550.16,
+    "concreto": 0.0714,
+    "rendimiento": 51.67958656
   }
 ]
