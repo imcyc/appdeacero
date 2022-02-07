@@ -164,7 +164,7 @@
     "longitud": 3,
     "destino": "Azotea",
     "espesor": 10,
-    "precio": 531.98,
+    "precio": 479.48,
     "concreto": 0.105,
     "rendimiento": 46.83840749
   },
@@ -173,7 +173,7 @@
     "longitud": 3,
     "destino": "Entrepiso",
     "espesor": 10,
-    "precio": 540.68,
+    "precio": 488.18,
     "concreto": 0.105,
     "rendimiento": 46.83840749
   },
@@ -182,7 +182,7 @@
     "longitud": 3.5,
     "destino": "Azotea",
     "espesor": 12,
-    "precio": 607.86,
+    "precio": 544.86,
     "concreto": 0.126,
     "rendimiento": 41.63922229
   },
@@ -191,7 +191,7 @@
     "longitud": 3.5,
     "destino": "Entrepiso",
     "espesor": 12,
-    "precio": 616.56,
+    "precio": 553.56,
     "concreto": 0.126,
     "rendimiento": 41.63922229
   },
@@ -200,7 +200,7 @@
     "longitud": 4,
     "destino": "Azotea",
     "espesor": 13.5,
-    "precio": 668.06,
+    "precio": 597.06,
     "concreto": 0.1412,
     "rendimiento": 36.44003708
   },
@@ -209,7 +209,7 @@
     "longitud": 4,
     "destino": "Entrepiso",
     "espesor": 13.5,
-    "precio": 676.76,
+    "precio": 606.16,
     "concreto": 0.1412,
     "rendimiento": 36.44003708
   },
@@ -218,7 +218,7 @@
     "longitud": 4.5,
     "destino": "Azotea",
     "espesor": 15,
-    "precio": 731.23,
+    "precio": 652.48,
     "concreto": 0.1575,
     "rendimiento": 31.24085187
   },
@@ -227,7 +227,7 @@
     "longitud": 4.5,
     "destino": "Entrepiso",
     "espesor": 15,
-    "precio": 739.93,
+    "precio": 661.18,
     "concreto": 0.1575,
     "rendimiento": 31.24085187
   },
@@ -236,7 +236,7 @@
     "longitud": 5,
     "destino": "Azotea",
     "espesor": 17,
-    "precio": 807.34,
+    "precio": 718.09,
     "concreto": 0.1785,
     "rendimiento": 26.04166667
   },
@@ -245,7 +245,7 @@
     "longitud": 5,
     "destino": "Entrepiso",
     "espesor": 17,
-    "precio": 816.04,
+    "precio": 726.79,
     "concreto": 0.1785,
     "rendimiento": 26.04166667
   },
@@ -254,7 +254,7 @@
     "longitud": 3,
     "destino": "Azotea",
     "espesor": 14,
-    "precio": 499.64,
+    "precio": 465.89,
     "concreto": 0.057,
     "rendimiento": 84.74576271
   },
@@ -263,7 +263,7 @@
     "longitud": 3,
     "destino": "Entrepiso",
     "espesor": 14,
-    "precio": 508.34,
+    "precio": 474.59,
     "concreto": 0.057,
     "rendimiento": 84.74576271
   },
@@ -272,7 +272,7 @@
     "longitud": 3.5,
     "destino": "Azotea",
     "espesor": 14,
-    "precio": 504.05,
+    "precio": 470.30,
     "concreto": 0.0606,
     "rendimiento": 76.47921867
   },
@@ -281,7 +281,7 @@
     "longitud": 3.5,
     "destino": "Entrepiso",
     "espesor": 14,
-    "precio": 512.75,
+    "precio": 479.00,
     "concreto": 0.0606,
     "rendimiento": 76.47921867
   },
@@ -290,7 +290,7 @@
     "longitud": 4,
     "destino": "Azotea",
     "espesor": 16,
-    "precio": 541.22,
+    "precio": 505.07,
     "concreto": 0.0642,
     "rendimiento": 68.21267464
   },
@@ -299,7 +299,7 @@
     "longitud": 4,
     "destino": "Entrepiso",
     "espesor": 16,
-    "precio": 549.92,
+    "precio": 513.77,
     "concreto": 0.0642,
     "rendimiento": 68.21267464
   },
@@ -308,7 +308,7 @@
     "longitud": 4.5,
     "destino": "Azotea",
     "espesor": 18,
-    "precio": 578.39,
+    "precio": 539.84,
     "concreto": 0.0678,
     "rendimiento": 59.9461306
   },
@@ -317,7 +317,7 @@
     "longitud": 4.5,
     "destino": "Entrepiso",
     "espesor": 18,
-    "precio": 587.09,
+    "precio": 548.54,
     "concreto": 0.0678,
     "rendimiento": 59.9461306
   },
@@ -326,7 +326,7 @@
     "longitud": 5,
     "destino": "Azotea",
     "espesor": 20,
-    "precio": 615.56,
+    "precio": 574.61,
     "concreto": 0.0714,
     "rendimiento": 51.67958656
   },
@@ -335,7 +335,7 @@
     "longitud": 5,
     "destino": "Entrepiso",
     "espesor": 20,
-    "precio": 624.26,
+    "precio": 583.31,
     "concreto": 0.0714,
     "rendimiento": 51.67958656
   }

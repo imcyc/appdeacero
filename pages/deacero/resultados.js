@@ -34,7 +34,7 @@ function Resultados() {
     setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
     setLosaaligerada(data.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino));
 
-  }, []);
+  }, [losasolida, losaligerada]);
 
   if(!losasolida.length || !jornadaCimbrado){
     return <div className='cargando'>Cargando datos</div>;
@@ -250,24 +250,28 @@ function Resultados() {
           <hr/>
           <h2 className="naranja">RESULTADOS</h2>
         </div>
+        
         <div className="datos">
           <div>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              ÁREA (m<sup>2</sup>): <input type="number" step="10" placeholder={area} onChange={cambioArea} className="tectron" />
+              ÁREA (m<sup>2</sup>): <span className="naranja">{area}</span> {/*<input type="number" step="10" placeholder={area} onChange={cambioArea} className="tectron" />*/}
             </h2>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              DESTINO: 
+              DESTINO:  <span className="naranja">{destino}</span>
+              {/*
               <select onChange={cambioDestino} className="tectron">
                 <option value={destino}>{destino}</option>
                 <option value="Entrepiso">ENTREPISO</option>
                 <option value="Azotea">AZOTEA</option>
               </select>
+              */}
             </h2>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              LONGITUD DE CLARO (m):
+              LONGITUD DE CLARO (m): <span className='naranja'>{claro}</span>
+              {/*
               <select onChange={cambioClaro} className="tectron">
                 <option value={claro}>{claro}</option>
                 <option value="3">3</option>
@@ -276,26 +280,28 @@ function Resultados() {
                 <option value="4.5">4.5</option>
                 <option value="5">5</option>
               </select>
+               */}
             </h2>
           </div>
           <div>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              PRECIO DEL CONCRETO: $
-              <input type="number" step="10" placeholder={pconcreto} onChange={cambioPrecio} className="tectron" />
+              PRECIO DEL CONCRETO: <span className="naranja">$ {pconcreto}</span>
+              {/*<input type="number" step="10" placeholder={pconcreto} onChange={cambioPrecio} className="tectron" />*/}
             </h2>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              PRECIO DE LA MALLA SOLDADA: $
-              <input type="number" step="10" placeholder={pmalla} onChange={cambioPrecioMalla} className="tectron" />
+              PRECIO DE LA MALLA SOLDADA: <span className="naranja">$ {pmalla}</span>
+              {/*<input type="number" step="10" placeholder={pmalla} onChange={cambioPrecioMalla} className="tectron" />*/}
             </h2>
             <h2 className="flexter">
               <span className="lnr lnr-chevron-right"></span> 
-              PRECIO DE LA VARILLA G42: $
-              <input type="number" step="10" placeholder={pvar} onChange={cambioPrecioVarilla} className="tectron" />
+              PRECIO DE LA VARILLA G42: <span className="naranja">$ {pvar}</span>
+              {/*<input type="number" step="10" placeholder={pvar} onChange={cambioPrecioVarilla} className="tectron" />*/}
             </h2>
           </div>
         </div>
+        
         <div className="layt">
         <Datos 
             bkg="uno"
