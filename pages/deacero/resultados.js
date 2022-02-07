@@ -119,7 +119,21 @@ function Resultados() {
     costoTVigBovPret = precio8VigBovPret;
   };
 
+  /*
   let precio1LosaSolida = 0.105*(parseFloat(pconcreto)+202.39)+4.27*(15.4+4.23)+(4.27*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio2LosaSolida = precio1LosaSolida-0.5*pvar;
+  let precio3LosaSolida = 0.126*(parseFloat(pconcreto)+202.39)+5.12*(15.4+4.23)+(5.12*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio4LosaSolida = precio3LosaSolida-0.5*pvar;
+  let precio5LosaSolida = 0.1412*(parseFloat(pconcreto)+202.39)+5.97*(15.4+4.23)+(5.97*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio6LosaSolida = precio5LosaSolida-0.5*pvar;
+  let precio7LosaSolida = 0.1575*(parseFloat(pconcreto)+202.39)+6.82*(15.4+4.23)+(6.82*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio8LosaSolida = precio7LosaSolida-0.5*pvar;
+  let precio9LosaSolida = 0.1785*(parseFloat(pconcreto)+202.39)+7.68*(15.4+4.23)+(7.68*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
+  let precio10LosaSolida = precio9LosaSolida-0.5*pvar;
+  */
+
+  
+  let precio1LosaSolida = 0.105*(parseFloat(pconcreto)+202.3881588)+4.27*(parseFloat(pvar)+4.23214656)+(4.27*0.035)*24.82+6.228*11.33+90.2893;
   let precio2LosaSolida = precio1LosaSolida-0.5*pvar;
   let precio3LosaSolida = 0.126*(parseFloat(pconcreto)+202.39)+5.12*(15.4+4.23)+(5.12*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
   let precio4LosaSolida = precio3LosaSolida-0.5*pvar;
@@ -153,7 +167,8 @@ function Resultados() {
     costoLosaSolida = precio9LosaSolida;
   };
 
-  let precio1LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+1.509*(15.4+4.03)+0.851*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
+  //let precio1LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+1.509*(15.4+4.03)+0.851*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
+  let precio1LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.3881588)+1.509*(parseFloat(pvar)+4.030615771)+0.851*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla * 100)/100+6.262742583)+6.228*11.33+90.28931134;
   let precio2LosaAligerada = precio1LosaAligerada-0.5*pvar;
   let precio3LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+2.55*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
   let precio4LosaAligerada = precio3LosaAligerada-0.5*pvar;
@@ -238,8 +253,6 @@ function Resultados() {
     localStorage.setItem('pvar', e.target.value);
   }
 
-  
-
   return (
     <Layout>
       <div className="resultados">
@@ -310,7 +323,7 @@ function Resultados() {
             costo={(costoTVigBovAA * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoTVigBovAA * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
-            ejecucion={((area / 32) + 2.6 + 0.3 + 0.4).toFixed(1)}
+            ejecucion={((area / 32) + (area / 17.2) + (area / 160) + (area / 141.8439716)).toFixed(1)}
             imagen="1"
           />
           <Datos 
@@ -320,7 +333,7 @@ function Resultados() {
             costo={(costoTVigBovPret * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoTVigBovPret * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
-            ejecucion={((area / 32) + 2.9 + 0.3 + 0.5).toFixed(1)}
+            ejecucion={((area / 9.6) + (area / 46.83841) + (area / 57.14286)).toFixed(1)}
             imagen="2"
           />
         </div>
@@ -329,20 +342,20 @@ function Resultados() {
             bkg="dos"
             titulo="LOSA SÓLIDA Y VAR. G42"
             clarox={claro}
-            costo={(losasolida[0].precio * 1.2).toFixed(2)}
-            costoTotal={thousands_separators(((losasolida[0].precio * 1.2) * area).toFixed(2))}
+            costo={(costoLosaSolida * 1.2).toFixed(2)}
+            costoTotal={thousands_separators(((costoLosaSolida * 1.2) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
-            ejecucion={((area / 9.6) + 1.6 + 1.3).toFixed(1)}
+            ejecucion={((area / 9.6) + (area / 46.83841) + (area / 57.14286)).toFixed(1)}
             imagen="3"
           />
           <Datos 
             bkg="dos"
             titulo="LOSA ALIGERADA Y VAR. G42"
             clarox={claro}
-            costo={(losaligerada[0].precio * 1.2).toFixed(2)}
-            costoTotal={thousands_separators(((losaligerada[0].precio * 1.2) * area).toFixed(2))}
+            costo={(costoLosaAligerada * 1.2).toFixed(2)}
+            costoTotal={thousands_separators(((costoLosaAligerada * 1.2) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
-            ejecucion={((area / 9.6) + 0.8 + 0.6).toFixed(1)}
+            ejecucion={((area / 9.6) + (area / 84.74576) + (area / 105.2632)).toFixed(1)}
             imagen="4"
           />
         </div>
