@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import styles from '../../styles/Mapei.module.css';
 import { TiArrowRight } from 'react-icons/ti';
 
-export default function Formulario22() {
+export default function Formulario() {
 
   const router = useRouter()
 
@@ -20,7 +20,7 @@ export default function Formulario22() {
     localStorage.setItem('pvar', e.target.pvar.value);
 
     router.push({
-      pathname: "/deacero/resultados22"
+      pathname: "/deacero/resultados"
     })
   }
 
@@ -40,7 +40,7 @@ export default function Formulario22() {
         <img src="/logo-deacero.svg" alt="Calculadoras para la construcción - Instituto Mexicano del Cemento y del Concreto A.C" style={{width: '300px'}} />
         <hr/>
         <p style={{ margin: '0', padding: '0'}}>CALCULADORA DE COSTOS PARA</p>
-        <h2 style={{ marginTop: '0'}}>LOSAS EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS</h2>
+        <h2 style={{ marginTop: '0'}}>LOSAS EN UNA DIRECCIÓN, SIMPLEMENTE APOYADAS 22</h2>
         <hr/>
         <h1>PROPORCIONAR LOS SIGUIENTES DATOS</h1>
         <div className={styles.forma}>
@@ -59,7 +59,6 @@ export default function Formulario22() {
             <option value="4">4</option>
             <option value="4.5">4.5</option>
             <option value="5">5</option>
-            <option value="5">5.5</option>
           </select>
         </div>
         <hr/>

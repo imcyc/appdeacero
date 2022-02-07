@@ -19,6 +19,7 @@ function Resultados() {
   const [vigBovPretensada, setVigBovPretensada] = useState([]);
   const [losasolida, setLosasolida] = useState([]);
   const [losaligerada, setLosaaligerada] = useState([]);
+  const [jornadaCimbrado, setJornadaCimbrado] = [{"cimbrado": 32,"colocacion": 19,"colocacionM5": 160,"concreto":0}];
 
   useEffect(() => {
     setArea(localStorage.getItem('area'));
@@ -32,7 +33,15 @@ function Resultados() {
     setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
     setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
     setLosaaligerada(data.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino));
+
   }, []);
+
+  if(!losasolida.length || !jornadaCimbrado){
+    return <div className='cargando'>Cargando datos</div>;
+  }
+
+  console.log('prueba: ' + JSON.stringify(losasolida[0].precio));
+  console.log('jornada: ' + JSON.stringify(jornadaCimbrado.cimbrado));
 
   function thousands_separators(num)
   {
@@ -229,6 +238,8 @@ function Resultados() {
     localStorage.setItem('pvar', e.target.value);
   }
 
+  
+
   return (
     <Layout>
       <div className="resultados">
@@ -286,7 +297,7 @@ function Resultados() {
           </div>
         </div>
         <div className="layt">
-          <Datos 
+        <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
             clarox={claro}
@@ -312,8 +323,8 @@ function Resultados() {
             bkg="dos"
             titulo="LOSA SÓLIDA Y VAR. G42"
             clarox={claro}
-            costo={(costoLosaSolida * 1.2).toFixed(2)}
-            costoTotal={thousands_separators(((costoLosaSolida * 1.2) * area).toFixed(2))}
+            costo={(losasolida[0].precio * 1.2).toFixed(2)}
+            costoTotal={thousands_separators(((losasolida[0].precio * 1.2) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
             ejecucion={((area / 9.6) + 1.6 + 1.3).toFixed(1)}
             imagen="3"
@@ -322,8 +333,8 @@ function Resultados() {
             bkg="dos"
             titulo="LOSA ALIGERADA Y VAR. G42"
             clarox={claro}
-            costo={(costoLosaAligerada * 1.2).toFixed(2)}
-            costoTotal={thousands_separators(((costoLosaAligerada * 1.2) * area).toFixed(2))}
+            costo={(losaligerada[0].precio * 1.2).toFixed(2)}
+            costoTotal={thousands_separators(((losaligerada[0].precio * 1.2) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
             ejecucion={((area / 9.6) + 0.8 + 0.6).toFixed(1)}
             imagen="4"
