@@ -174,14 +174,17 @@ function Resultados() {
   let precio4LosaAligerada = precio3LosaAligerada-0.5*parseFloat(pvar);
   //let precio5LosaAligerada = precio3LosaAligerada + 31.97;
   //let precio6LosaAligerada = precio5LosaAligerada-0.5*parseFloat(pvar);
-  let precio7LosaAligerada = precio9LosaAligerada + 31.97;
   
   let precio9LosaAligerada = 14*(9.52+341.0538/240)+0.0714*(parseFloat(pconcreto)+202.3881588)+3.02*(parseFloat(pvar)+4.23214656)+0.85*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
   let precio10LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
 
   let precio5LosaAligerada = precio2LosaAligerada+(precio9LosaAligerada-precio2LosaAligerada)/2.45;
-  let precio6LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
-  let precio8LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
+  let precio6LosaAligerada = precio5LosaAligerada-0.5*parseFloat(pvar);
+  let precio7LosaAligerada = precio6LosaAligerada-0.5*parseFloat(pvar);
+  let precio8LosaAligerada = precio7LosaAligerada-0.5*parseFloat(pvar);
+ 
+
+  //return precio7LosaAligerada;
 
 
   let costoLosaAligerada = 0;
