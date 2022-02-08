@@ -133,16 +133,16 @@ function Resultados() {
   */
 
   
-  let precio1LosaSolida = 0.105*(parseFloat(pconcreto)+202.3881588)+4.27*(parseFloat(pvar)+4.23214656)+(4.27*0.035)*24.82+6.228*11.33+90.2893;
-  let precio2LosaSolida = precio1LosaSolida-0.5*pvar;
-  let precio3LosaSolida = 0.126*(parseFloat(pconcreto)+202.39)+5.12*(15.4+4.23)+(5.12*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
-  let precio4LosaSolida = precio3LosaSolida-0.5*pvar;
-  let precio5LosaSolida = 0.1412*(parseFloat(pconcreto)+202.39)+5.97*(15.4+4.23)+(5.97*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
-  let precio6LosaSolida = precio5LosaSolida-0.5*pvar;
-  let precio7LosaSolida = 0.1575*(parseFloat(pconcreto)+202.39)+6.82*(15.4+4.23)+(6.82*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
-  let precio8LosaSolida = precio7LosaSolida-0.5*pvar;
-  let precio9LosaSolida = 0.1785*(parseFloat(pconcreto)+202.39)+7.68*(15.4+4.23)+(7.68*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
-  let precio10LosaSolida = precio9LosaSolida-0.5*pvar;
+  let precio1LosaSolida = 0.105*(parseFloat(pconcreto)+202.3881588)+4.27*(parseFloat(pvar)+4.23214656)+(4.27*0.035)*24.82+6.228*11.33+90.28931134;
+  let precio2LosaSolida = precio1LosaSolida-0.5*parseFloat(pvar);
+  let precio3LosaSolida = 0.126*(parseFloat(pconcreto)+202.3881588)+5.12*(parseFloat(pvar)+4.23214656)+(5.12*0.035)*24.82+6.228*11.33+90.28931134;
+  let precio4LosaSolida = precio3LosaSolida-0.5*parseFloat(pvar);
+  let precio5LosaSolida = 0.1412*(parseFloat(pconcreto)+202.3881588)+5.97*(parseFloat(pvar)+4.23214656)+(5.97*0.035)*24.82+6.228*11.33+90.28931134;
+  let precio6LosaSolida = precio5LosaSolida-0.5*parseFloat(pvar);
+  let precio7LosaSolida = 0.1575*(parseFloat(pconcreto)+202.3881588)+6.82*(parseFloat(pvar)+4.23214656)+(6.82*0.035)*24.82+6.228*11.33+90.28931134;
+  let precio8LosaSolida = precio7LosaSolida-0.5*parseFloat(pvar);
+  let precio9LosaSolida = 0.1785*(parseFloat(pconcreto)+202.3881588)+7.68*(parseFloat(pvar)+4.23214656)+(7.68*0.035)*24.82+6.228*11.33+90.28931134;
+  let precio10LosaSolida = precio9LosaSolida-0.5*parseFloat(pvar);
   
   let costoLosaSolida = 0;
   if(destino === "Azotea" && claro == "3"){
@@ -168,16 +168,21 @@ function Resultados() {
   };
 
   //let precio1LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+1.509*(15.4+4.03)+0.851*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
-  let precio1LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.3881588)+1.509*(parseFloat(pvar)+4.030615771)+0.851*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla * 100)/100+6.262742583)+6.228*11.33+90.28931134;
-  let precio2LosaAligerada = precio1LosaAligerada-0.5*pvar;
-  let precio3LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+2.55*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
-  let precio4LosaAligerada = precio3LosaAligerada-0.5*pvar;
-  let precio5LosaAligerada = precio3LosaAligerada + 31.97;
-  let precio6LosaAligerada = precio5LosaAligerada-0.5*pvar;
-  let precio7LosaAligerada = precio5LosaAligerada + 31.97;
-  let precio8LosaAligerada = precio7LosaAligerada-0.5*pvar;
-  let precio9LosaAligerada = 14*(9.52+341.05/240)+0.0714*(parseFloat(pconcreto)+202.39)+3.02*(15.4+4.23)+0.85*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
-  let precio10LosaAligerada = precio9LosaAligerada-0.5*pvar;
+  let precio1LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.3881588)+1.509*(parseFloat(pvar)+4.030615771)+0.851*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
+  let precio2LosaAligerada = precio1LosaAligerada-0.5*parseFloat(pvar);
+  let precio3LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.3881588)+2.55*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
+  let precio4LosaAligerada = precio3LosaAligerada-0.5*parseFloat(pvar);
+  //let precio5LosaAligerada = precio3LosaAligerada + 31.97;
+  //let precio6LosaAligerada = precio5LosaAligerada-0.5*parseFloat(pvar);
+  let precio7LosaAligerada = precio9LosaAligerada + 31.97;
+  
+  let precio9LosaAligerada = 14*(9.52+341.0538/240)+0.0714*(parseFloat(pconcreto)+202.3881588)+3.02*(parseFloat(pvar)+4.23214656)+0.85*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
+  let precio10LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
+
+  let precio5LosaAligerada = precio2LosaAligerada+(precio9LosaAligerada-precio2LosaAligerada)/2.45;
+  let precio6LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
+  let precio8LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
+
 
   let costoLosaAligerada = 0;
   if(destino === "Azotea" && claro == "3"){
@@ -345,7 +350,7 @@ function Resultados() {
             costo={(costoLosaSolida * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoLosaSolida * 1.2) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
-            ejecucion={((area / 9.6) + (area / 46.83841) + (area / 57.14286)).toFixed(1)}
+            ejecucion={((area / 9.6) + (area / 29.83841) + (area / 57.14286)).toFixed(1)}
             imagen="3"
           />
           <Datos 
@@ -355,7 +360,7 @@ function Resultados() {
             costo={(costoLosaAligerada * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoLosaAligerada * 1.2) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
-            ejecucion={((area / 9.6) + (area / 84.74576) + (area / 105.2632)).toFixed(1)}
+            ejecucion={((area / 9.6) + (area / 65.74576) + (area / 105.2632)).toFixed(1)}
             imagen="4"
           />
         </div>
