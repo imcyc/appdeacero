@@ -36,6 +36,8 @@ function Resultados() {
 
   }, [losasolida, losaligerada]);
 
+  console.log('mallatlan' + pmalla);
+
   if(!losasolida.length || !jornadaCimbrado){
     return <div className='cargando'>Cargando datos</div>;
   }
@@ -168,20 +170,41 @@ function Resultados() {
   };
 
   //let precio1LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+1.509*(15.4+4.03)+0.851*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
+
+  console.log(parseFloat(pmalla));
+
   let precio1LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.3881588)+1.509*(parseFloat(pvar)+4.030615771)+0.851*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
+
+  console.log(parseFloat(precio1LosaAligerada));
+
   let precio2LosaAligerada = precio1LosaAligerada-0.5*parseFloat(pvar);
+
+  console.log(parseFloat(precio2LosaAligerada));
+
   let precio3LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.3881588)+2.55*(parseFloat(pvar)+4.030615771)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
   let precio4LosaAligerada = precio3LosaAligerada-0.5*parseFloat(pvar);
 
+  console.log(parseFloat(precio3LosaAligerada));
+
+  console.log(parseFloat(precio4LosaAligerada));
   
   let precio9LosaAligerada = 14*(9.52+341.0538/240)+0.0714*(parseFloat(pconcreto)+202.3881588)+3.02*(parseFloat(pvar)+4.23214656)+0.85*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
   let precio10LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
+
+  console.log(parseFloat(precio9LosaAligerada));
+
+  console.log(parseFloat(precio10LosaAligerada));
 
   let precio5LosaAligerada = precio2LosaAligerada+(precio9LosaAligerada-precio3LosaAligerada)/2.45;
   let precio6LosaAligerada = precio5LosaAligerada-0.5*parseFloat(pvar);
   let precio7LosaAligerada = precio3LosaAligerada+(precio9LosaAligerada-precio3LosaAligerada)*2/3;
   let precio8LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
   //return precio7LosaAligerada;
+
+  console.log(parseFloat(precio5LosaAligerada));
+  console.log(parseFloat(precio6LosaAligerada));
+  console.log(parseFloat(precio7LosaAligerada));
+  console.log(parseFloat(precio8LosaAligerada));
 
   let costoLosaAligerada = 0;
   if(destino === "Azotea" && claro == "3"){
@@ -327,7 +350,7 @@ function Resultados() {
             costo={(costoTVigBovAA * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoTVigBovAA * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
-            ejecucion={((area / 32) + (area / 17.2) + (area / 160) + (area / 141.8439716)).toFixed(1)}
+            ejecucion={((area / 32) + (area / 17.2) + (area / 160) + (area / 141.8439716)-1).toFixed(1)}
             imagen="1"
           />
           <Datos 
@@ -337,7 +360,7 @@ function Resultados() {
             costo={(costoTVigBovPret * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoTVigBovPret * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
-            ejecucion={((area / 9.6) + (area / 46.83841) + (area / 57.14286)).toFixed(1)}
+            ejecucion={((area / 9.6) + (area / 46.83841) + (area / 57.14286)-5).toFixed(1)}
             imagen="2"
           />
         </div>
@@ -356,8 +379,8 @@ function Resultados() {
             bkg="dos"
             titulo="LOSA ALIGERADA Y VAR. G42"
             clarox={claro}
-            costo={(costoLosaAligerada * 1.2).toFixed(2)}
-            costoTotal={thousands_separators(((costoLosaAligerada * 1.2) * area).toFixed(2))}
+            costo={(costoLosaAligerada * 1.212).toFixed(2)}
+            costoTotal={thousands_separators(((costoLosaAligerada * 1.212) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
             ejecucion={((area / 9.6) + (area / 65.74576) + (area / 105.2632)).toFixed(1)}
             imagen="4"
