@@ -19,31 +19,23 @@ function Resultados() {
   const [vigBovPretensada, setVigBovPretensada] = useState([]);
   const [losasolida, setLosasolida] = useState([]);
   const [losaligerada, setLosaaligerada] = useState([]);
-  const [jornadaCimbrado, setJornadaCimbrado] = [{"cimbrado": 32,"colocacion": 19,"colocacionM5": 160,"concreto":0}];
+
+  if(!data){
+    return <div className='cargando'>Cargando datos</div>;
+  }
 
   useEffect(() => {
+    setVigBovAA(data.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino));
+    setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
+    setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
+    setLosaaligerada(data.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino));
     setArea(localStorage.getItem('area'));
     setDestino(localStorage.getItem('destino'));
     setClaro(localStorage.getItem('claro'));
     setPconcreto(localStorage.getItem('pconcreto'));
     setPmalla(localStorage.getItem('pmalla'));
     setPvar(localStorage.getItem('pvar'));
-
-    setVigBovAA(data.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino));
-    setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
-    setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
-    setLosaaligerada(data.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino));
-
-  }, [losasolida, losaligerada, vigBovAA, vigBovPretensada]);
-
-  console.log('mallatlan' + pmalla);
-
-  if(!losasolida.length || !jornadaCimbrado){
-    return <div className='cargando'>Cargando datos</div>;
-  }
-
-  console.log('prueba: ' + JSON.stringify(losasolida[0].precio));
-  console.log('jornada: ' + JSON.stringify(jornadaCimbrado.cimbrado));
+  }, []);
 
   function thousands_separators(num)
   {
