@@ -4,10 +4,12 @@ import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import styles from '../../styles/Mapei.module.css';
 import Datos from '../components/datos';
+
 import data from '../components/data.json';
 //import { getWhyNextReasons } from "../../lib/api";
 
 function Resultados() {
+  const [ladata, setLadata] = useState(data);
   const [area, setArea] = useState('');
   const [destino, setDestino] = useState('');
   const [claro, setClaro] = useState('');
@@ -20,22 +22,30 @@ function Resultados() {
   const [losasolida, setLosasolida] = useState([]);
   const [losaligerada, setLosaaligerada] = useState([]);
 
-  if(!data){
-    return <div className='cargando'>Cargando datos</div>;
-  }
-
   useEffect(() => {
-    setVigBovAA(data.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino));
-    setVigBovPretensada(data.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
-    setLosasolida(data.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
-    setLosaaligerada(data.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino));
-    setArea(localStorage.getItem('area'));
-    setDestino(localStorage.getItem('destino'));
-    setClaro(localStorage.getItem('claro'));
-    setPconcreto(localStorage.getItem('pconcreto'));
-    setPmalla(localStorage.getItem('pmalla'));
-    setPvar(localStorage.getItem('pvar'));
+    
+      setVigBovAA(ladata.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino)); 
+      setVigBovPretensada(ladata.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino));
+      setLosasolida(ladata.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino));
+      setLosaaligerada(ladata.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino));
+
+      setArea(localStorage.getItem('area'));
+      setDestino(localStorage.getItem('destino'));
+      setClaro(localStorage.getItem('claro'));
+      setPconcreto(localStorage.getItem('pconcreto'));
+      setPmalla(localStorage.getItem('pmalla'));
+      setPvar(localStorage.getItem('pvar'));
+      
   }, []);
+
+  if(!ladata){
+    return <div className='cargando'>Cargando datos</div>;
+  };
+
+  let VigBovAAJornada = ladata.filter(dato => dato.tipo == "VigBovAA" && dato.longitud == claro && dato.destino == destino);
+  let VigBovPretensadaJornada = ladata.filter(dato => dato.tipo == "VigBovPretensada" && dato.longitud == claro && dato.destino == destino);
+  let LosasolidaJornada = ladata.filter(dato => dato.tipo == "LosaSolida" && dato.longitud == claro && dato.destino == destino);
+  let LosaaligeradaJornada = ladata.filter(dato => dato.tipo == "LosaAligerada" && dato.longitud == claro && dato.destino == destino);
 
   function thousands_separators(num)
   {
@@ -223,36 +233,6 @@ function Resultados() {
     )
   };
 
-  const cambioArea = (e) => {
-    setArea(e.target.value);
-    localStorage.setItem('area', e.target.value);
-  };
-
-  const cambioDestino = (e) => {
-    setDestino(e.target.value);
-    localStorage.setItem('destino', e.target.value);
-  };
-
-  const cambioClaro = (e) => {
-    setClaro(e.target.value);
-    localStorage.setItem('claro', e.target.value);
-  };
-
-  const cambioPrecio = (e) => {
-    setPconcreto(e.target.value);
-    localStorage.setItem('pconcreto', e.target.value);
-  };
-
-  const cambioPrecioMalla = (e) => {
-    setPmalla(e.target.value);
-    localStorage.setItem('pmalla', e.target.value);
-  }
-
-  const cambioPrecioVarilla = (e) => {
-    setPvar(e.target.value)
-    localStorage.setItem('pvar', e.target.value);
-  }
-
   return (
     <Layout>
       <div className="resultados">
@@ -316,14 +296,14 @@ function Resultados() {
         </div>
         
         <div className="layt">
-        <Datos 
+          <Datos 
             bkg="uno"
             titulo="VIG-BOV Alma Abierta"
             clarox={claro}
             costo={(costoTVigBovAA * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoTVigBovAA * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
-            ejecucion={((area / 32) + (area / 19) + (area / 160) + (area /costoTVigBovAA)+1).toFixed(1)}
+            ejecucion={((area / 32) + (area / 19) + (area / 160) + (area / (6 / VigBovAAJornada[0].concreto))).toFixed(1)}
             imagen="1"
           />
           <Datos 
@@ -333,7 +313,7 @@ function Resultados() {
             costo={(costoTVigBovPret * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoTVigBovPret * 1.2) * area).toFixed(2))}
             cimbrado={(area / 32).toFixed(1)}
-            ejecucion={((area / 32) + (area / 17.2) + (area / 160) + (area / costoTVigBovPret)+1).toFixed(1)}
+            ejecucion={((area / 32) + (area / 17.2) + (area / 160) + (area / (6 / VigBovPretensadaJornada[0].concreto))).toFixed(1)}
             imagen="2"
           />
         </div>
@@ -345,7 +325,7 @@ function Resultados() {
             costo={(costoLosaSolida * 1.2).toFixed(2)}
             costoTotal={thousands_separators(((costoLosaSolida * 1.2) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
-            ejecucion={((area / 9.6) + (area / 29.83841) + (area / 57.14286)).toFixed(1)}
+            ejecucion={((area / 9.6) + (area / LosasolidaJornada[0].rendimiento) + (area / (6 / LosasolidaJornada[0].concreto))).toFixed(1)}
             imagen="3"
           />
           <Datos 
@@ -355,7 +335,7 @@ function Resultados() {
             costo={(costoLosaAligerada * 1.212).toFixed(2)}
             costoTotal={thousands_separators(((costoLosaAligerada * 1.212) * area).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
-            ejecucion={((area / 9.6) + (area / 65.74576) + (area / 105.2632)).toFixed(1)}
+            ejecucion={((area / 9.6) + (area / LosaaligeradaJornada[0].rendimiento) + (area / (6 / LosaaligeradaJornada[0].concreto))).toFixed(1)}
             imagen="4"
           />
         </div>
