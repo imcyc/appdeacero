@@ -7,7 +7,6 @@ import Datos from '../components/datos';
 
 import data from '../components/data.json';
 //import { getWhyNextReasons } from "../../lib/api";
-
 function Resultados() {
   const [ladata, setLadata] = useState(data);
   const [area, setArea] = useState('');
