@@ -176,21 +176,28 @@ function Resultados() {
 
   //let precio1LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.3881588)+1.509*(parseFloat(pvar)+4.030615771)+0.851*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
   let precio1LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+1.509*(parseFloat(pvar)+4.03)+0.851*(parseFloat(pvar)+4.23)+1.05*(parseFloat(pmalla)+6.26)+6.228*(11.33+0)+(0+90.29);
-  console.log(precio1LosaAligerada);
-  let precio2LosaAligerada = precio1LosaAligerada-0.5*parseFloat(pvar);
-  //let precio3LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.3881588)+2.55*(parseFloat(pvar)+4.030615771)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
-  let precio3LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.39)+2.55*(parseFloat(pvar)+4.23)+1.05*(2370/100+6.26)+6.228*(11.33+0)+(0+90.29)
-  console.log(precio3LosaAligerada);
-
-  let precio4LosaAligerada = precio3LosaAligerada-0.5*parseFloat(pvar);;
-  
+  let precio3LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.39)+2.55*(parseFloat(pvar)+4.23)+1.05*(2370/100+6.26)+6.228*(11.33+0)+(0+90.29);
   let precio9LosaAligerada = 14*(9.52+341.0538/240)+0.0714*(parseFloat(pconcreto)+202.3881588)+3.02*(parseFloat(pvar)+4.23214656)+0.85*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
+  let precio2LosaAligerada = precio1LosaAligerada-0.5*parseFloat(pvar);
+  let precio4LosaAligerada = precio3LosaAligerada-0.5*parseFloat(pvar);
+  let precio6LosaAligerada = precio3LosaAligerada+(precio9LosaAligerada-precio3LosaAligerada)/3;
+  let precio5LosaAligerada = precio6LosaAligerada-0.5*parseFloat(pvar);
+  let precio8LosaAligerada = precio3LosaAligerada+(precio9LosaAligerada-precio3LosaAligerada)*2/3;
+  let precio7LosaAligerada = precio8LosaAligerada-0.5*parseFloat(pvar);
   let precio10LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
+  
+  console.log('PRECIO 1: '+precio2LosaAligerada);
+  console.log('PRECIO 2: '+precio1LosaAligerada);
+  console.log('PRECIO 3: '+precio4LosaAligerada);
+  console.log('PRECIO 4: '+precio3LosaAligerada);
+  console.log('PRECIO 5: '+precio5LosaAligerada);
+  console.log('PRECIO 6: '+precio6LosaAligerada);
+  console.log('PRECIO 7: '+precio7LosaAligerada);
+  console.log('PRECIO 8: '+precio8LosaAligerada);
+  console.log('PRECIO 9: '+precio10LosaAligerada);
+  console.log('PRECIO 10: '+precio9LosaAligerada);
 
-  let precio5LosaAligerada = precio2LosaAligerada+(precio9LosaAligerada-precio3LosaAligerada)/2.45;
-  let precio6LosaAligerada = precio5LosaAligerada-0.5*parseFloat(pvar);
-  let precio7LosaAligerada = precio3LosaAligerada+(precio9LosaAligerada-precio3LosaAligerada)*2/3;
-  let precio8LosaAligerada = precio9LosaAligerada-0.5*parseFloat(pvar);
+  
   //return precio7LosaAligerada;
 
   let costoLosaAligerada = 0;
@@ -203,13 +210,13 @@ function Resultados() {
   } else if(destino === "Entrepiso" && claro == "3.5"){
     costoLosaAligerada = precio3LosaAligerada;
   } else if(destino === "Azotea" && claro == "4"){
-    costoLosaAligerada = precio6LosaAligerada;
-  } else if(destino === "Entrepiso" && claro == "4"){
     costoLosaAligerada = precio5LosaAligerada;
+  } else if(destino === "Entrepiso" && claro == "4"){
+    costoLosaAligerada = precio6LosaAligerada;
   } else if(destino === "Azotea" && claro == "4.5"){
-    costoLosaAligerada = precio8LosaAligerada;
-  } else if(destino === "Entrepiso" && claro == "4.5"){
     costoLosaAligerada = precio7LosaAligerada;
+  } else if(destino === "Entrepiso" && claro == "4.5"){
+    costoLosaAligerada = precio8LosaAligerada;
   } else if(destino === "Azotea" && claro == "5"){
     costoLosaAligerada = precio10LosaAligerada;
   } else if(destino === "Entrepiso" && claro == "5"){
@@ -336,8 +343,8 @@ function Resultados() {
             bkg="dos"
             titulo="LOSA ALIGERADA Y VAR. G42"
             clarox={claro}
-            costo={(costoLosaAligerada * 1.212).toFixed(2)}
-            costoTotal={thousands_separators(((costoLosaAligerada * 1.212) * area).toFixed(2))}
+            costo={(costoLosaAligerada * 1.2).toFixed(2)}
+            costoTotal={thousands_separators((area * (costoLosaAligerada * 1.2).toFixed(2)).toFixed(2))}
             cimbrado={(area / 9.6).toFixed(1)}
             ejecucion={((area / 9.6) + (area / LosaaligeradaJornada[0].rendimiento) + (area / (6 / LosaaligeradaJornada[0].concreto))).toFixed(1)}
             imagen="4"
