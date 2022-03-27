@@ -135,7 +135,6 @@ function Resultados() {
   let precio10LosaSolida = precio9LosaSolida-0.5*pvar;
   */
 
-  
   let precio1LosaSolida = 0.105*(parseFloat(pconcreto)+202.3881588)+4.27*(parseFloat(pvar)+4.23214656)+(4.27*0.035)*24.82+6.228*11.33+90.28931134;
   let precio2LosaSolida = precio1LosaSolida-0.5*parseFloat(pvar);
   let precio3LosaSolida = 0.126*(parseFloat(pconcreto)+202.3881588)+5.12*(parseFloat(pvar)+4.23214656)+(5.12*0.035)*24.82+6.228*11.33+90.28931134;
@@ -194,9 +193,7 @@ function Resultados() {
   console.log('PRECIO 8: '+precio8LosaAligerada);
   console.log('PRECIO 9: '+precio10LosaAligerada);
   console.log('PRECIO 10: '+precio9LosaAligerada);
-
   //return precio7LosaAligerada;
-
   let costoLosaAligerada = 0;
   if(destino === "Azotea" && claro == "3"){
     costoLosaAligerada = precio2LosaAligerada;
