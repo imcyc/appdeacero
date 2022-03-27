@@ -171,9 +171,7 @@ function Resultados() {
   };
 
   //let precio1LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+1.509*(15.4+4.03)+0.851*(15.4+4.23)+1.05*(parseFloat(pmalla * 100)/100+6.26)+6.228*(11.33+0)+(0+90.29);
-
   //14*($Q$98+$AA$98/320)+0.057*($S$85+$AD$108)+1.509*($S$87+$BE$108)+0.851*($S$86+$BB$108)+1.05*($S$88/100+$BT$108)+$S$106*($Q$103+0)+(0+$AG$108)
-
   //let precio1LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.3881588)+1.509*(parseFloat(pvar)+4.030615771)+0.851*(parseFloat(pvar)+4.23214656)+1.05*(parseFloat(pmalla)+6.262742583)+6.228*11.33+90.28931134;
   let precio1LosaAligerada = 14*(6.73+341.05/320)+0.057*(parseFloat(pconcreto)+202.39)+1.509*(parseFloat(pvar)+4.03)+0.851*(parseFloat(pvar)+4.23)+1.05*(parseFloat(pmalla)+6.26)+6.228*(11.33+0)+(0+90.29);
   let precio3LosaAligerada = 14*(6.73+341.0538/320)+0.057*(parseFloat(pconcreto)+202.39)+2.55*(parseFloat(pvar)+4.23)+1.05*(2370/100+6.26)+6.228*(11.33+0)+(0+90.29);
@@ -197,7 +195,6 @@ function Resultados() {
   console.log('PRECIO 9: '+precio10LosaAligerada);
   console.log('PRECIO 10: '+precio9LosaAligerada);
 
-  
   //return precio7LosaAligerada;
 
   let costoLosaAligerada = 0;
