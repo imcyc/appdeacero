@@ -134,7 +134,6 @@ function Resultados() {
   let precio9LosaSolida = 0.1785*(parseFloat(pconcreto)+202.39)+7.68*(15.4+4.23)+(7.68*0.035)*(24.82+0)+6.228*(11.33+0)+(0+90.29);
   let precio10LosaSolida = precio9LosaSolida-0.5*pvar;
   */
-
   let precio1LosaSolida = 0.105*(parseFloat(pconcreto)+202.3881588)+4.27*(parseFloat(pvar)+4.23214656)+(4.27*0.035)*24.82+6.228*11.33+90.28931134;
   let precio2LosaSolida = precio1LosaSolida-0.5*parseFloat(pvar);
   let precio3LosaSolida = 0.126*(parseFloat(pconcreto)+202.3881588)+5.12*(parseFloat(pvar)+4.23214656)+(5.12*0.035)*24.82+6.228*11.33+90.28931134;
