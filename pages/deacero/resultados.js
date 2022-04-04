@@ -144,7 +144,6 @@ function Resultados() {
   let precio8LosaSolida = precio7LosaSolida-0.5*parseFloat(pvar);
   let precio9LosaSolida = 0.1785*(parseFloat(pconcreto)+202.3881588)+7.68*(parseFloat(pvar)+4.23214656)+(7.68*0.035)*24.82+6.228*11.33+90.28931134;
   let precio10LosaSolida = precio9LosaSolida-0.5*parseFloat(pvar);
-  
   let costoLosaSolida = 0;
   if(destino === "Azotea" && claro == "3"){
     costoLosaSolida = precio2LosaSolida;
